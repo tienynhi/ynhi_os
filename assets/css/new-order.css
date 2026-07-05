@@ -1,0 +1,559 @@
+/* ============================================================
+   YNHI OS — NEW ORDER SCREEN
+   Mobile-first, tối ưu cho iPhone 390px, thao tác một tay
+   ============================================================ */
+
+:root {
+  --y-green: #17a35a;
+  --y-green-dark: #128a4a;
+  --y-green-soft: #e6f7ee;
+  --y-green-softer: #f3fbf6;
+  --y-bg: #f4f6f5;
+  --y-card-bg: #ffffff;
+  --y-text-main: #1a231f;
+  --y-text-sub: #6b7570;
+  --y-text-faint: #99a19c;
+  --y-border: #ecefee;
+  --y-danger: #e0453f;
+  --y-radius-lg: 20px;
+  --y-radius-md: 14px;
+  --y-radius-sm: 10px;
+  --y-shadow: 0 4px 16px rgba(20, 40, 30, 0.06);
+  --y-shadow-soft: 0 2px 8px rgba(20, 40, 30, 0.05);
+  --y-footer-h: 84px;
+  --y-header-h: 64px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--y-bg);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: var(--y-text-main);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.app-shell {
+  max-width: 430px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background: var(--y-bg);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* =======================================================
+   BLOCK 01 - HEADER
+   ======================================================= */
+/* ============================================================
+   1. HEADER
+   ============================================================ */
+.order-header {
+  height: var(--y-header-h);
+  min-height: var(--y-header-h);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 16px;
+  background: var(--y-card-bg);
+  border-bottom: 1px solid var(--y-border);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.btn-back {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  border-radius: 50%;
+  border: none;
+  background: var(--y-green-soft);
+  color: var(--y-green-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-title-group {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.header-title {
+  font-size: 18px;
+  font-weight: 800;
+  margin: 0;
+  color: var(--y-text-main);
+}
+
+.header-meta {
+  font-size: 12.5px;
+  color: var(--y-text-sub);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+}
+
+.order-code {
+  color: var(--y-green-dark);
+  font-weight: 700;
+}
+
+.meta-dot {
+  color: var(--y-text-faint);
+}
+
+.header-spacer {
+  margin-left: auto;
+}
+
+/* ============================================================
+   MAIN SCROLL AREA
+   ============================================================ */
+.order-main {
+  flex: 1;
+  padding: 14px 14px 0 14px;
+  padding-bottom: calc(var(--y-footer-h) + 14px);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.scroll-bottom-space {
+  height: 4px;
+}
+
+/* =======================================================
+   BLOCK 02 - KHÁCH HÀNG
+   ======================================================= */
+/* ============================================================
+   GENERIC CARD BLOCK
+   ============================================================ */
+.card-block {
+  background: var(--y-card-bg);
+  border-radius: var(--y-radius-lg);
+  box-shadow: var(--y-shadow-soft);
+  padding: 16px;
+}
+
+.card-block-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.card-icon-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.card-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--y-green-dark);
+}
+
+.bg-soft-green {
+  background: var(--y-green-soft);
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--y-text-main);
+}
+
+.badge-tag {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+
+.badge-vip {
+  background: var(--y-green-soft);
+  color: var(--y-green-dark);
+}
+
+/* ============================================================
+   FORM FIELDS
+   ============================================================ */
+.form-field {
+  margin-bottom: 12px;
+}
+
+.form-field:last-child {
+  margin-bottom: 0;
+}
+
+.form-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.form-label {
+  display: block;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--y-text-sub);
+  margin-bottom: 6px;
+}
+
+.input-lg,
+.form-control.input-lg,
+.form-select.input-lg {
+  height: 50px;
+  border-radius: var(--y-radius-md);
+  border: 1.5px solid var(--y-border);
+  background: var(--y-green-softer);
+  font-size: 15.5px;
+  font-weight: 600;
+  color: var(--y-text-main);
+  padding: 0 14px;
+}
+
+textarea.form-control.input-lg {
+  height: auto;
+  padding: 12px 14px;
+  line-height: 1.4;
+  resize: none;
+}
+
+.form-control.input-lg:focus,
+.form-select.input-lg:focus {
+  border-color: var(--y-green);
+  box-shadow: 0 0 0 3px rgba(23, 163, 90, 0.12);
+  background: var(--y-card-bg);
+}
+
+.form-control.input-lg::placeholder {
+  color: var(--y-text-faint);
+  font-weight: 500;
+}
+
+/* =======================================================
+   BLOCK 03 - SẢN PHẨM
+   ======================================================= */
+/* ============================================================
+   3. CARD SẢN PHẨM
+   ============================================================ */
+.card-product {
+  padding-bottom: 12px;
+}
+
+.btn-add-product-full {
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 12px;
+  height: 44px;
+  border-radius: var(--y-radius-md);
+}
+
+.product-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 0;
+  border-top: 1px solid var(--y-border);
+}
+
+.card-product .product-item:first-child {
+  border-top: none;
+  padding-top: 2px;
+}
+
+.product-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.product-name {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--y-text-main);
+  line-height: 1.25;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.product-price {
+  font-size: 12.5px;
+  color: var(--y-text-sub);
+  font-weight: 500;
+  margin-top: 1px;
+}
+
+.product-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.qty-control {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  background: var(--y-green-softer);
+  border-radius: 100px;
+  padding: 3px;
+  flex-shrink: 0;
+}
+
+.qty-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  background: var(--y-card-bg);
+  color: var(--y-green-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 3px rgba(20, 40, 30, 0.12);
+}
+
+.qty-btn.qty-plus {
+  background: var(--y-green);
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(23, 163, 90, 0.35);
+}
+
+.qty-value {
+  min-width: 26px;
+  text-align: center;
+  font-size: 14.5px;
+  font-weight: 800;
+  color: var(--y-text-main);
+}
+
+.btn-remove-item {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  border-radius: 50%;
+  border: none;
+  background: transparent;
+  color: var(--y-danger);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =======================================================
+   BLOCK 04 - SHIP
+   (dùng chung style .card-block / .form-row-2 / .form-field / .input-lg ở BLOCK 02 - không có CSS riêng)
+   ======================================================= */
+
+/* =======================================================
+   BLOCK 05 - THANH TOÁN
+   ======================================================= */
+/* ============================================================
+   5. THANH TOÁN
+   ============================================================ */
+.payment-options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.payment-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 12px 6px;
+  border-radius: var(--y-radius-md);
+  border: 1.5px solid var(--y-border);
+  background: var(--y-green-softer);
+  cursor: pointer;
+}
+
+.payment-option input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.payment-icon {
+  font-size: 22px;
+  line-height: 1;
+}
+
+.payment-label {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--y-text-sub);
+  text-align: center;
+}
+
+.payment-option.is-selected {
+  background: var(--y-green-soft);
+  border-color: var(--y-green);
+}
+
+.payment-option.is-selected .payment-label {
+  color: var(--y-green-dark);
+}
+
+/* =======================================================
+   BLOCK 06 - GHI CHÚ
+   (dùng chung style .card-block / .form-field / textarea.input-lg ở BLOCK 02 - không có CSS riêng)
+   ======================================================= */
+
+/* =======================================================
+   BLOCK 07 - TỔNG KẾT
+   ======================================================= */
+/* ============================================================
+   7. CARD TỔNG KẾT
+   ============================================================ */
+.card-summary {
+  background: var(--y-card-bg);
+}
+
+.summary-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 0;
+}
+
+.summary-label {
+  font-size: 14.5px;
+  color: var(--y-text-sub);
+  font-weight: 500;
+}
+
+.summary-value {
+  font-size: 14.5px;
+  color: var(--y-text-main);
+  font-weight: 700;
+}
+
+.summary-divider {
+  height: 1px;
+  background: var(--y-border);
+  margin: 8px 0;
+}
+
+.summary-row-total .summary-label {
+  font-size: 15.5px;
+  font-weight: 700;
+  color: var(--y-text-main);
+}
+
+.summary-row-total .summary-value {
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.due-box {
+  margin-top: 14px;
+  background: var(--y-green);
+  border-radius: var(--y-radius-md);
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 6px 18px rgba(23, 163, 90, 0.3);
+}
+
+.due-label {
+  font-size: 13.5px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.due-value {
+  font-size: 23px;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+/* =======================================================
+   BLOCK 08 - FOOTER
+   ======================================================= */
+/* ============================================================
+   8. FOOTER CỐ ĐỊNH
+   ============================================================ */
+.order-footer {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 430px;
+  height: var(--y-footer-h);
+  background: var(--y-card-bg);
+  border-top: 1px solid var(--y-border);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px calc(env(safe-area-inset-bottom, 0px) + 12px) 14px;
+  z-index: 30;
+  box-shadow: 0 -6px 20px rgba(20, 40, 30, 0.06);
+}
+
+.btn-footer {
+  flex: 1;
+  height: 52px;
+  border-radius: var(--y-radius-md);
+  border: none;
+  font-size: 15.5px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-footer-outline {
+  background: var(--y-green-soft);
+  color: var(--y-green-dark);
+}
+
+.btn-footer-solid {
+  background: var(--y-green);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(23, 163, 90, 0.35);
+  flex: 1.3;
+}
+
+/* ============================================================
+   RESPONSIVE — đảm bảo chuẩn 390px iPhone
+   ============================================================ */
+@media (max-width: 380px) {
+  .order-main {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .card-block {
+    padding: 14px;
+  }
+  .due-value {
+    font-size: 20px;
+  }
+}
