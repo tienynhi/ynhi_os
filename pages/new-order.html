@@ -288,11 +288,13 @@
       <div class="form-row-2">
         <div class="form-field">
           <label class="form-label">Đơn vị ship</label>
-          <select class="form-select input-lg">
-            <option>Grab</option>
-            <option>Ahamove</option>
-            <option>Ship nội bộ</option>
-            <option>Khách tự đến lấy</option>
+          <select class="form-select input-lg select-placeholder" required>
+            <option value="" disabled selected hidden>Chưa chọn</option>
+            <option value="noi-bo">Shipper nội bộ</option>
+            <option value="grab">Grab</option>
+            <option value="ahamove">Ahamove</option>
+            <option value="be">Be</option>
+            <option value="khac">Khác</option>
           </select>
         </div>
         <div class="form-field">
@@ -433,3 +435,13 @@
 
 </body>
 </html>
+/* --- BLOCK 04: placeholder "Chưa chọn" nhạt màu hơn text bình thường --- */
+.select-placeholder:invalid {
+  color: var(--y-text-faint);
+  font-weight: 500;
+}
+
+.select-placeholder option:not([value=""]) {
+  color: var(--y-text-main);
+  font-weight: 600;
+}
