@@ -108,12 +108,73 @@
         </div>
       </div>
 
-      <button type="button" class="btn-add-product btn-add-product-full">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round">
-          <path d="M12 5v14M5 12h14"/>
-        </svg>
-        Thêm bánh
-      </button>
+      <div class="add-buttons-row">
+        <details class="add-dropdown">
+          <summary class="btn-add-product btn-add-product-half">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round">
+              <path d="M12 5v14M5 12h14"/>
+            </svg>
+            Thêm bánh
+          </summary>
+          <div class="add-dropdown-panel">
+            <div class="dropdown-item-row">
+              <span class="dropdown-item-name">Bánh kem dâu tây size 20cm</span>
+              <button type="button" class="btn-dropdown-add" aria-label="Thêm bánh kem dâu tây">+</button>
+            </div>
+            <div class="dropdown-item-row">
+              <span class="dropdown-item-name">Bánh su kem hộp 6 cái</span>
+              <button type="button" class="btn-dropdown-add" aria-label="Thêm bánh su kem">+</button>
+            </div>
+            <div class="dropdown-item-row">
+              <span class="dropdown-item-name">Bánh mousse chanh dây mini</span>
+              <button type="button" class="btn-dropdown-add" aria-label="Thêm bánh mousse chanh dây">+</button>
+            </div>
+            <div class="dropdown-item-row">
+              <span class="dropdown-item-name">Bánh red velvet size 18cm</span>
+              <button type="button" class="btn-dropdown-add" aria-label="Thêm bánh red velvet">+</button>
+            </div>
+          </div>
+        </details>
+
+        <details class="add-dropdown">
+          <summary class="btn-add-product btn-add-product-half btn-add-product-outline">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round">
+              <path d="M12 5v14M5 12h14"/>
+            </svg>
+            Phụ kiện
+          </summary>
+          <div class="add-dropdown-panel">
+            <div class="dropdown-item-row">
+              <span class="dropdown-item-name">Nến</span>
+              <button type="button" class="btn-dropdown-add" aria-label="Thêm nến">+</button>
+            </div>
+            <div class="dropdown-item-row">
+              <span class="dropdown-item-name">Mũ sinh nhật</span>
+              <button type="button" class="btn-dropdown-add" aria-label="Thêm mũ sinh nhật">+</button>
+            </div>
+            <div class="dropdown-item-row">
+              <span class="dropdown-item-name">Thiệp</span>
+              <button type="button" class="btn-dropdown-add" aria-label="Thêm thiệp">+</button>
+            </div>
+            <div class="dropdown-item-row">
+              <span class="dropdown-item-name">Dao</span>
+              <button type="button" class="btn-dropdown-add" aria-label="Thêm dao">+</button>
+            </div>
+            <div class="dropdown-item-row">
+              <span class="dropdown-item-name">Muỗng</span>
+              <button type="button" class="btn-dropdown-add" aria-label="Thêm muỗng">+</button>
+            </div>
+            <div class="dropdown-item-row">
+              <span class="dropdown-item-name">Dĩa</span>
+              <button type="button" class="btn-dropdown-add" aria-label="Thêm dĩa">+</button>
+            </div>
+            <div class="dropdown-item-row">
+              <span class="dropdown-item-name">Khăn giấy</span>
+              <button type="button" class="btn-dropdown-add" aria-label="Thêm khăn giấy">+</button>
+            </div>
+          </div>
+        </details>
+      </div>
 
       <div class="product-list">
 
@@ -182,7 +243,27 @@
             </button>
           </div>
         </div>
-
+<!-- Accessory item (hiển thị chung layout với sản phẩm) -->
+        <div class="product-item">
+          <div class="product-info">
+            <div class="product-name">Nến sinh nhật</div>
+            <div class="product-price">10.000đ</div>
+          </div>
+          <div class="product-actions">
+            <div class="qty-control">
+              <button type="button" class="qty-btn qty-minus" aria-label="Giảm số lượng">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12h14"/></svg>
+              </button>
+              <span class="qty-value">1</span>
+              <button type="button" class="qty-btn qty-plus" aria-label="Tăng số lượng">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+              </button>
+            </div>
+            <button type="button" class="btn-remove-item" aria-label="Xóa sản phẩm">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+            </button>
+          </div>
+        </div>
       </div>
     </section>
 

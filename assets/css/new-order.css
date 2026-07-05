@@ -557,3 +557,80 @@ textarea.form-control.input-lg {
     font-size: 20px;
   }
 }
+/* --- BLOCK 03: 2 nút Thêm bánh / Phụ kiện --- */
+.add-buttons-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.add-dropdown {
+  flex: 1;
+  min-width: 0;
+}
+
+.add-dropdown > summary {
+  list-style: none;
+}
+
+.add-dropdown > summary::-webkit-details-marker {
+  display: none;
+}
+
+.btn-add-product-half {
+  width: 100%;
+  height: 44px;
+  justify-content: center;
+  border-radius: var(--y-radius-md);
+  cursor: pointer;
+}
+
+.btn-add-product-outline {
+  background: var(--y-green-soft);
+  color: var(--y-green-dark);
+  box-shadow: none;
+}
+
+.add-dropdown-panel {
+  margin-top: 8px;
+  background: var(--y-green-softer);
+  border: 1px solid var(--y-border);
+  border-radius: var(--y-radius-md);
+  padding: 6px 10px;
+}
+
+.dropdown-item-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 2px;
+  border-top: 1px solid var(--y-border);
+  min-height: 44px;
+}
+
+.add-dropdown-panel .dropdown-item-row:first-child {
+  border-top: none;
+}
+
+.dropdown-item-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--y-text-main);
+}
+
+.btn-dropdown-add {
+  width: 34px;
+  height: 34px;
+  min-width: 34px;
+  border-radius: 50%;
+  border: none;
+  background: var(--y-green);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(23, 163, 90, 0.35);
+}
