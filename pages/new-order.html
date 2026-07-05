@@ -109,35 +109,14 @@
       </div>
 
       <div class="add-buttons-row">
-        <details class="add-dropdown">
-          <details class="add-dropdown">
-          <summary class="add-dropdown-toggle">
-            <span class="btn-add-product btn-add-product-half">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round">
-                <path d="M12 5v14M5 12h14"/>
-              </svg>
-              Thêm bánh
-            </span>
-          </summary>
-          <div class="add-dropdown-panel">
-            ...
-          </div>
-        </details>
-
-        <details class="add-dropdown">
-          <summary class="add-dropdown-toggle">
-            <span class="btn-add-product btn-add-product-half btn-add-product-outline">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round">
-                <path d="M12 5v14M5 12h14"/>
-              </svg>
-              Phụ kiện
-            </span>
-          </summary>
-          <div class="add-dropdown-panel">
-            ...
-          </div>
-        </details>
-          <div class="add-dropdown-panel">
+        <div class="add-dropdown-wrap">
+          <button type="button" class="btn-add-product btn-add-product-half" onclick="document.getElementById('panel-banh').classList.toggle('show')">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round">
+              <path d="M12 5v14M5 12h14"/>
+            </svg>
+            Thêm bánh
+          </button>
+          <div class="dropdown-panel" id="panel-banh">
             <div class="dropdown-item-row">
               <span class="dropdown-item-name">Bánh kem dâu tây size 20cm</span>
               <button type="button" class="btn-dropdown-add" aria-label="Thêm bánh kem dâu tây">+</button>
@@ -155,37 +134,16 @@
               <button type="button" class="btn-dropdown-add" aria-label="Thêm bánh red velvet">+</button>
             </div>
           </div>
-        </details>
+        </div>
 
-        <details class="add-dropdown">
-          <details class="add-dropdown">
-          <summary class="add-dropdown-toggle">
-            <span class="btn-add-product btn-add-product-half">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round">
-                <path d="M12 5v14M5 12h14"/>
-              </svg>
-              Thêm bánh
-            </span>
-          </summary>
-          <div class="add-dropdown-panel">
-            ...
-          </div>
-        </details>
-
-        <details class="add-dropdown">
-          <summary class="add-dropdown-toggle">
-            <span class="btn-add-product btn-add-product-half btn-add-product-outline">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round">
-                <path d="M12 5v14M5 12h14"/>
-              </svg>
-              Phụ kiện
-            </span>
-          </summary>
-          <div class="add-dropdown-panel">
-            ...
-          </div>
-        </details>
-          <div class="add-dropdown-panel">
+        <div class="add-dropdown-wrap">
+          <button type="button" class="btn-add-product btn-add-product-half btn-add-product-outline" onclick="document.getElementById('panel-phukien').classList.toggle('show')">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round">
+              <path d="M12 5v14M5 12h14"/>
+            </svg>
+            Phụ kiện
+          </button>
+          <div class="dropdown-panel" id="panel-phukien">
             <div class="dropdown-item-row">
               <span class="dropdown-item-name">Nến</span>
               <button type="button" class="btn-dropdown-add" aria-label="Thêm nến">+</button>
@@ -215,9 +173,8 @@
               <button type="button" class="btn-dropdown-add" aria-label="Thêm khăn giấy">+</button>
             </div>
           </div>
-        </details>
+        </div>
       </div>
-
       <div class="product-list">
 
         <!-- Product item -->
