@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Tạo đơn - Ynhi OS</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/new-order.css">
+</head>
+<body>
+
+<div class="app-shell">
+
+  <!-- ===================================================== -->
+  <!-- BLOCK 01 - HEADER -->
+  <!-- ===================================================== -->
+  <!-- ===================== 1. HEADER ===================== -->
+  <header class="order-header">
+    <button type="button" class="btn-back" aria-label="Quay lại">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M15 18l-6-6 6-6"/>
+      </svg>
+    </button>
+    <div class="header-title-group">
+      <h1 class="header-title">Tạo đơn</h1>
+      <div class="header-meta">
+        <span class="order-code">#DH00124</span>
+        <span class="meta-dot">•</span>
+        <span class="order-time">14:32 - 04/07</span>
+      </div>
+    </div>
+    <div class="header-spacer"></div>
+  </header>
+
+  <!-- ===================== MAIN SCROLL AREA ===================== -->
+  <main class="order-main">
+
+    <!-- ===================================================== -->
+    <!-- BLOCK 02 - KHÁCH HÀNG -->
+    <!-- ===================================================== -->
+    <!-- ===================== 2. CARD KHÁCH HÀNG ===================== -->
+    <section class="card-block">
+      <div class="card-block-header">
+        <div class="card-icon-title">
+          <span class="card-icon bg-soft-green">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+          </span>
+          <span class="card-title">Khách hàng</span>
+        </div>
+        <span class="badge-tag badge-vip">Khách quen</span>
+      </div>
+
+      <div class="form-field">
+        <label class="form-label">Tên khách hàng</label>
+        <input type="text" class="form-control input-lg" placeholder="Nhập tên khách hàng" value="Chị Hồng Nhung">
+      </div>
+
+      <div class="form-field">
+        <label class="form-label">Số điện thoại</label>
+        <input type="tel" class="form-control input-lg" placeholder="Nhập số điện thoại" value="0909 123 456">
+      </div>
+
+      <div class="form-field">
+        <label class="form-label">Địa chỉ</label>
+        <input type="text" class="form-control input-lg" placeholder="Số nhà, đường..." value="12 Trần Hưng Đạo">
+      </div>
+
+      <div class="form-row-2">
+        <div class="form-field">
+          <label class="form-label">Khu vực</label>
+          <select class="form-select input-lg">
+            <option>Quận 1</option>
+            <option>Quận 3</option>
+            <option>Quận Bình Thạnh</option>
+            <option>Thủ Đức</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label class="form-label">Loại khách</label>
+          <select class="form-select input-lg">
+            <option>Khách mới</option>
+            <option selected>Khách quen</option>
+            <option>Khách VIP</option>
+          </select>
+        </div>
+      </div>
+    </section>
+<!-- ===================================================== -->
+    <!-- BLOCK 03 - SẢN PHẨM -->
+    <!-- ===================================================== -->
+    <!-- ===================== 3. CARD SẢN PHẨM ===================== -->
+    <section class="card-block card-product">
+      <div class="card-block-header">
+        <div class="card-icon-title">
+          <span class="card-icon bg-soft-green">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 7h-3V6a4 4 0 0 0-8 0v1H6a1 1 0 0 0-1 1l1 12h12l1-12a1 1 0 0 0-1-1z"/>
+            </svg>
+          </span>
+          <span class="card-title">Sản phẩm</span>
+        </div>
+      </div>
+
+      <button type="button" class="btn-add-product btn-add-product-full">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round">
+          <path d="M12 5v14M5 12h14"/>
+        </svg>
+        Thêm bánh
+      </button>
+
+      <div class="product-list">
+
+        <!-- Product item -->
+        <div class="product-item">
+          <div class="product-info">
+            <div class="product-name">Bánh kem dâu tây size 20cm</div>
+            <div class="product-price">185.000đ</div>
+          </div>
+          <div class="product-actions">
+            <div class="qty-control">
+              <button type="button" class="qty-btn qty-minus" aria-label="Giảm số lượng">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12h14"/></svg>
+              </button>
+              <span class="qty-value">1</span>
+              <button type="button" class="qty-btn qty-plus" aria-label="Tăng số lượng">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+              </button>
+            </div>
+            <button type="button" class="btn-remove-item" aria-label="Xóa sản phẩm">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Product item -->
+        <div class="product-item">
+          <div class="product-info">
+            <div class="product-name">Bánh su kem hộp 6 cái</div>
+            <div class="product-price">65.000đ</div>
+          </div>
+          <div class="product-actions">
+            <div class="qty-control">
+              <button type="button" class="qty-btn qty-minus" aria-label="Giảm số lượng">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12h14"/></svg>
+              </button>
+              <span class="qty-value">2</span>
+              <button type="button" class="qty-btn qty-plus" aria-label="Tăng số lượng">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+              </button>
+            </div>
+            <button type="button" class="btn-remove-item" aria-label="Xóa sản phẩm">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Product item -->
+        <div class="product-item">
+          <div class="product-info">
+            <div class="product-name">Bánh mousse chanh dây mini</div>
+            <div class="product-price">45.000đ</div>
+          </div>
+          <div class="product-actions">
+            <div class="qty-control">
+              <button type="button" class="qty-btn qty-minus" aria-label="Giảm số lượng">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12h14"/></svg>
+              </button>
+              <span class="qty-value">3</span>
+              <button type="button" class="qty-btn qty-plus" aria-label="Tăng số lượng">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+              </button>
+            </div>
+            <button type="button" class="btn-remove-item" aria-label="Xóa sản phẩm">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================================================== -->
+    <!-- BLOCK 04 - SHIP -->
+    <!-- ===================================================== -->
+    <!-- ===================== 4. CARD SHIP ===================== -->
+    <section class="card-block">
+      <div class="card-block-header">
+        <div class="card-icon-title">
+          <span class="card-icon bg-soft-green">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="1" y="6" width="15" height="12" rx="1.5"/>
+              <path d="M16 10h4l3 3v5h-7z"/>
+              <circle cx="6" cy="20" r="1.6"/>
+              <circle cx="18" cy="20" r="1.6"/>
+            </svg>
+          </span>
+          <span class="card-title">Giao hàng</span>
+        </div>
+      </div>
+
+      <div class="form-row-2">
+        <div class="form-field">
+          <label class="form-label">Đơn vị ship</label>
+          <select class="form-select input-lg">
+            <option>Grab</option>
+            <option>Ahamove</option>
+            <option>Ship nội bộ</option>
+            <option>Khách tự đến lấy</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label class="form-label">Phí ship</label>
+          <input type="text" class="form-control input-lg" placeholder="0đ" value="25.000đ">
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================== -->
+    <!-- BLOCK 05 - THANH TOÁN -->
+    <!-- ===================================================== -->
+    <!-- ===================== 5. CARD THANH TOÁN ===================== -->
+    <section class="card-block">
+      <div class="card-block-header">
+        <div class="card-icon-title">
+          <span class="card-icon bg-soft-green">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="5" width="20" height="14" rx="2"/>
+              <path d="M2 10h20"/>
+            </svg>
+          </span>
+          <span class="card-title">Thanh toán</span>
+        </div>
+      </div>
+
+      <div class="payment-options">
+        <label class="payment-option is-selected">
+          <input type="radio" name="payment-method" checked>
+          <span class="payment-icon">💵</span>
+          <span class="payment-label">Tiền mặt</span>
+        </label>
+        <label class="payment-option">
+          <input type="radio" name="payment-method">
+          <span class="payment-icon">🏦</span>
+          <span class="payment-label">Chuyển khoản</span>
+        </label>
+        <label class="payment-option">
+          <input type="radio" name="payment-method">
+          <span class="payment-icon">🧾</span>
+          <span class="payment-label">Đặt cọc</span>
+        </label>
+      </div>
+
+      <div class="form-field mt-3">
+        <label class="form-label">Số tiền đặt cọc</label>
+        <input type="text" class="form-control input-lg" placeholder="0đ" value="100.000đ">
+      </div>
+    </section>
+
+    <!-- ===================================================== -->
+    <!-- BLOCK 06 - GHI CHÚ -->
+    <!-- ===================================================== -->
+    <!-- ===================== 6. CARD GHI CHÚ ===================== -->
+    <section class="card-block">
+      <div class="card-block-header">
+        <div class="card-icon-title">
+          <span class="card-icon bg-soft-green">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16v12H8l-4 4z"/>
+            </svg>
+          </span>
+          <span class="card-title">Ghi chú</span>
+        </div>
+      </div>
+
+      <div class="form-field">
+        <label class="form-label">Ghi chú khách</label>
+        <textarea class="form-control input-lg" rows="2" placeholder="Ví dụ: giao trước 5h chiều, gọi trước khi giao...">Viết chữ "Chúc mừng sinh nhật Bo" trên bánh</textarea>
+      </div>
+
+      <div class="form-field">
+        <label class="form-label">Ghi chú bếp</label>
+        <textarea class="form-control input-lg" rows="2" placeholder="Yêu cầu riêng cho bộ phận bếp...">Không dùng hạt, khách bị dị ứng</textarea>
+      </div>
+    </section>
+
+    <!-- ===================================================== -->
+    <!-- BLOCK 07 - TỔNG KẾT -->
+    <!-- ===================================================== -->
+    <!-- ===================== 7. CARD TỔNG KẾT ===================== -->
+    <section class="card-block card-summary">
+      <div class="summary-row">
+        <span class="summary-label">Tạm tính</span>
+        <span class="summary-value">450.000đ</span>
+      </div>
+      <div class="summary-row">
+        <span class="summary-label">Phí ship</span>
+        <span class="summary-value">25.000đ</span>
+      </div>
+      <div class="summary-row">
+        <span class="summary-label">Giảm giá</span>
+        <span class="summary-value text-danger">-20.000đ</span>
+      </div>
+
+      <div class="summary-divider"></div>
+
+      <div class="summary-row summary-row-total">
+        <span class="summary-label">Tổng cộng</span>
+        <span class="summary-value">455.000đ</span>
+      </div>
+      <div class="summary-row">
+        <span class="summary-label">Đã cọc</span>
+        <span class="summary-value">100.000đ</span>
+      </div>
+
+      <div class="due-box">
+        <span class="due-label">KHÁCH CẦN TRẢ</span>
+        <span class="due-value">355.000đ</span>
+      </div>
+    </section>
+
+    <div class="scroll-bottom-space"></div>
+
+  </main>
+
+  <!-- ===================================================== -->
+  <!-- BLOCK 08 - FOOTER -->
+  <!-- ===================================================== -->
+  <!-- ===================== 8. FOOTER CỐ ĐỊNH ===================== -->
+  <footer class="order-footer">
+    <button type="button" class="btn-footer btn-footer-outline">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/>
+        <circle cx="12" cy="12" r="3"/>
+      </svg>
+      Xem bill tạm
+    </button>
+    <button type="button" class="btn-footer btn-footer-solid">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 6L9 17l-5-5"/>
+      </svg>
+      Tạo đơn
+    </button>
+  </footer>
+
+</div>
+
+</body>
+</html>
