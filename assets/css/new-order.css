@@ -569,12 +569,37 @@ textarea.form-control.input-lg {
   min-width: 0;
 }
 
-.add-dropdown > summary {
+/* --- BLOCK 03: reset summary về "vô hình", không còn tự ý can thiệp style --- */
+.add-dropdown > summary.add-dropdown-toggle {
+  display: block;
   list-style: none;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
 }
 
-.add-dropdown > summary::-webkit-details-marker {
+.add-dropdown > summary.add-dropdown-toggle::-webkit-details-marker {
   display: none;
+}
+
+.add-dropdown > summary.add-dropdown-toggle::marker {
+  content: "";
+}
+
+/* --- nút thật (span) kế thừa 100% style .btn-add-product gốc --- */
+.btn-add-product-half {
+  width: 100%;
+  height: 44px;
+  justify-content: center;
+  border-radius: var(--y-radius-md);
+}
+
+.btn-add-product-outline {
+  background: var(--y-green-soft);
+  color: var(--y-green-dark);
+  box-shadow: none;
 }
 
 .btn-add-product-half {
