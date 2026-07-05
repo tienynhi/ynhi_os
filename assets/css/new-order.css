@@ -417,7 +417,52 @@ textarea.form-control.input-lg {
 .payment-option.is-selected .payment-label {
   color: var(--y-green-dark);
 }
+.payment-options-2col {
+  grid-template-columns: repeat(2, 1fr);
+}
 
+.payment-option-lg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 50px;
+  padding: 0 10px;
+  border-radius: var(--y-radius-md);
+  border: 1.5px solid var(--y-green);
+  background: var(--y-card-bg);
+  cursor: pointer;
+}
+
+.payment-option-lg input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.payment-lg-icon {
+  font-size: 15px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.payment-lg-label {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--y-green-dark);
+  text-align: center;
+  line-height: 1.2;
+}
+
+.payment-option-lg.is-selected {
+  background: var(--y-green);
+  border-color: var(--y-green);
+}
+
+.payment-option-lg.is-selected .payment-lg-label {
+  color: #ffffff;
+}
 /* =======================================================
    BLOCK 06 - GHI CHÚ
    (dùng chung style .card-block / .form-field / textarea.input-lg ở BLOCK 02 - không có CSS riêng)
