@@ -1,5 +1,5 @@
 /* ============================================================
-   YNHI OS — ORDER DASHBOARD (Kiểm soát đơn hàng)
+   YNHI OS — HOME
    Mobile-first, chuẩn iPhone 390px, cùng Design System New Order
    ============================================================ */
 
@@ -17,7 +17,6 @@
   --y-radius-lg: 20px;
   --y-radius-md: 14px;
   --y-shadow-soft: 0 2px 8px rgba(20, 40, 30, 0.05);
-  --y-header-h: 64px;
 }
 
 * {
@@ -45,174 +44,207 @@ body {
 /* =======================================================
    BLOCK 01 - HEADER
    ======================================================= */
-.dashboard-header {
-  height: var(--y-header-h);
-  min-height: var(--y-header-h);
+.home-header {
+  padding: 24px 16px 18px 16px;
+  background: var(--y-card-bg);
+  border-bottom: 1px solid var(--y-border);
+}
+
+.home-logo-row {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 0 16px;
-  background: var(--y-card-bg);
-  border-bottom: 1px solid var(--y-border);
-  position: sticky;
-  top: 0;
-  z-index: 20;
+  margin-bottom: 18px;
 }
 
-.btn-back {
-  width: 40px;
-  height: 40px;
-  min-width: 40px;
-  border-radius: 50%;
-  border: none;
-  background: var(--y-green-soft);
-  color: var(--y-green-dark);
+.home-logo-mark {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  border-radius: 12px;
+  background: var(--y-green);
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 800;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 4px 12px rgba(23, 163, 90, 0.3);
 }
 
-.header-title-group {
+.home-logo-text-group {
   display: flex;
   flex-direction: column;
-  line-height: 1.2;
+  line-height: 1.25;
 }
 
-.header-title {
+.home-logo-title {
   font-size: 18px;
   font-weight: 800;
-  margin: 0;
   color: var(--y-text-main);
 }
 
-.header-meta {
-  font-size: 12.5px;
-  color: var(--y-text-sub);
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-weight: 500;
-}
-
-.header-date-value {
-  color: var(--y-green-dark);
-  font-weight: 700;
-}
-
-.meta-dot {
+.home-logo-subtitle {
+  font-size: 12px;
+  font-weight: 600;
   color: var(--y-text-faint);
+  letter-spacing: 0.4px;
 }
 
-.header-spacer {
-  margin-left: auto;
-}
-
-/* =======================================================
-   BLOCK 02 - TỔNG QUAN HÔM NAY
-   ======================================================= */
-.today-summary {
-  margin: 14px 14px 0 14px;
-  background: var(--y-card-bg);
-  border-radius: var(--y-radius-lg);
-  box-shadow: var(--y-shadow-soft);
-  padding: 16px;
+.home-greeting {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 2px;
 }
 
-.today-summary-label {
+.home-greeting-hello {
   font-size: 14.5px;
   font-weight: 600;
   color: var(--y-text-sub);
 }
 
-.today-summary-value {
-  font-size: 18px;
-  font-weight: 800;
-  color: var(--y-green-dark);
-}
-
-/* =======================================================
-   BLOCK 03 - DANH SÁCH TRẠNG THÁI ĐƠN
-   ======================================================= */
-.dashboard-main {
-  flex: 1;
-  padding: 14px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.status-card {
-  width: 100%;
-  min-height: 72px;
-  height: 76px;
-  background: var(--y-card-bg);
-  border-radius: var(--y-radius-lg);
-  box-shadow: var(--y-shadow-soft);
-  border: none;
-  padding: 0 16px;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  text-align: left;
-  cursor: pointer;
-  transition: transform 0.05s ease, box-shadow 0.05s ease;
-}
-
-.status-card:active {
-  transform: scale(0.98);
-  box-shadow: 0 1px 4px rgba(20, 40, 30, 0.08);
-}
-
-.status-icon {
-  width: 44px;
-  height: 44px;
-  min-width: 44px;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 22px;
-  line-height: 1;
-}
-
-.bg-soft-green {
-  background: var(--y-green-soft);
-}
-
-.status-name {
-  flex: 1;
+.home-greeting-message {
   font-size: 16px;
   font-weight: 700;
   color: var(--y-text-main);
 }
 
-.status-badge {
-  flex-shrink: 0;
-  background: var(--y-green);
-  color: #ffffff;
+/* =======================================================
+   MAIN
+   ======================================================= */
+.home-main {
+  flex: 1;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.home-section {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* =======================================================
+   BLOCK 02 - THAO TÁC CHÍNH
+   ======================================================= */
+.action-card {
+  width: 100%;
+  background: var(--y-card-bg);
+  border-radius: var(--y-radius-lg);
+  box-shadow: var(--y-shadow-soft);
+  border: none;
+  padding: 18px 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.action-card-primary {
+  transition: transform 0.05s ease, box-shadow 0.05s ease;
+}
+
+.action-card-primary:hover {
+  box-shadow: 0 6px 18px rgba(20, 40, 30, 0.1);
+}
+
+.action-card-primary:active {
+  transform: scale(0.98);
+  box-shadow: 0 1px 4px rgba(20, 40, 30, 0.08);
+}
+
+.action-icon {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.action-icon-primary {
+  background: var(--y-green-soft);
+}
+
+.action-text-group {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.action-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--y-text-main);
+}
+
+.action-desc {
   font-size: 13px;
+  font-weight: 500;
+  color: var(--y-text-sub);
+}
+
+/* =======================================================
+   BLOCK 03 - PLACEHOLDER
+   ======================================================= */
+.action-card-placeholder {
+  cursor: default;
+  opacity: 0.75;
+}
+
+.action-icon-placeholder {
+  background: var(--y-border);
+}
+
+.action-card-placeholder .action-title {
+  color: var(--y-text-sub);
+}
+
+.badge-coming-soon {
+  flex-shrink: 0;
+  font-size: 10.5px;
   font-weight: 800;
-  padding: 6px 14px;
+  letter-spacing: 0.4px;
+  color: var(--y-text-faint);
+  background: var(--y-bg);
+  border: 1px solid var(--y-border);
+  padding: 5px 10px;
   border-radius: 100px;
+}
+
+/* =======================================================
+   BLOCK 04 - BOTTOM
+   ======================================================= */
+.home-footer {
+  padding: 16px 14px calc(env(safe-area-inset-bottom, 0px) + 16px) 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-version {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--y-text-faint);
 }
 
 /* ============================================================
    RESPONSIVE — đảm bảo chuẩn 390px iPhone
    ============================================================ */
 @media (max-width: 380px) {
-  .dashboard-main {
+  .home-main {
     padding-left: 10px;
     padding-right: 10px;
   }
-  .today-summary {
-    margin-left: 10px;
-    margin-right: 10px;
-    padding: 14px;
-  }
-  .status-card {
-    padding: 0 12px;
+  .action-card {
+    padding: 16px 12px;
   }
 }
