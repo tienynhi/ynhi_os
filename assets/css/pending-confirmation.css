@@ -131,3 +131,127 @@ body {
     padding: 12px 10px;
   }
 }
+/* =======================================================
+   BLOCK 03 - ĐƠN HÔM NAY
+   ======================================================= */
+.today-orders {
+  flex: 1;
+  padding: 0 14px 14px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.order-card {
+  background: var(--y-card-bg);
+  border-radius: var(--y-radius-lg);
+  box-shadow: var(--y-shadow-soft);
+  padding: 16px;
+}
+
+.order-card-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.order-card-top {
+  margin-bottom: 10px;
+}
+
+.order-time {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--y-green-dark);
+}
+
+.order-code-badge {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--y-text-sub);
+  background: var(--y-green-softer);
+  padding: 4px 10px;
+  border-radius: 100px;
+}
+
+.order-customer-name {
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--y-text-main);
+  margin-bottom: 8px;
+}
+
+.order-product-list {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-bottom: 10px;
+}
+
+.order-product-item {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--y-text-main);
+}
+
+.order-address {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.order-address-icon {
+  font-size: 13px;
+  line-height: 1;
+}
+
+.order-address-text {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--y-text-sub);
+}
+
+.order-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-order-confirm {
+  flex: 1;
+  height: 44px;
+  border-radius: var(--y-radius-md);
+  border: none;
+  background: var(--y-green);
+  color: #ffffff;
+  font-size: 14.5px;
+  font-weight: 700;
+  box-shadow: 0 3px 10px rgba(23, 163, 90, 0.28);
+}
+
+.btn-order-print {
+  flex: 1;
+  height: 44px;
+  border-radius: var(--y-radius-md);
+  border: 1.5px solid var(--y-green);
+  background: var(--y-card-bg);
+  color: var(--y-green-dark);
+  font-size: 14.5px;
+  font-weight: 700;
+}
+
+.btn-order-more {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  border-radius: var(--y-radius-md);
+  border: none;
+  background: var(--y-green-softer);
+  color: var(--y-text-sub);
+  font-size: 18px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
