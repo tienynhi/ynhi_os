@@ -1,0 +1,218 @@
+/* ============================================================
+   YNHI OS — ORDER DASHBOARD (Kiểm soát đơn hàng)
+   Mobile-first, chuẩn iPhone 390px, cùng Design System New Order
+   ============================================================ */
+
+:root {
+  --y-green: #17a35a;
+  --y-green-dark: #128a4a;
+  --y-green-soft: #e6f7ee;
+  --y-green-softer: #f3fbf6;
+  --y-bg: #f4f6f5;
+  --y-card-bg: #ffffff;
+  --y-text-main: #1a231f;
+  --y-text-sub: #6b7570;
+  --y-text-faint: #99a19c;
+  --y-border: #ecefee;
+  --y-radius-lg: 20px;
+  --y-radius-md: 14px;
+  --y-shadow-soft: 0 2px 8px rgba(20, 40, 30, 0.05);
+  --y-header-h: 64px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--y-bg);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: var(--y-text-main);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.app-shell {
+  max-width: 430px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background: var(--y-bg);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* =======================================================
+   BLOCK 01 - HEADER
+   ======================================================= */
+.dashboard-header {
+  height: var(--y-header-h);
+  min-height: var(--y-header-h);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 16px;
+  background: var(--y-card-bg);
+  border-bottom: 1px solid var(--y-border);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.btn-back {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  border-radius: 50%;
+  border: none;
+  background: var(--y-green-soft);
+  color: var(--y-green-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-title-group {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.header-title {
+  font-size: 18px;
+  font-weight: 800;
+  margin: 0;
+  color: var(--y-text-main);
+}
+
+.header-meta {
+  font-size: 12.5px;
+  color: var(--y-text-sub);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+}
+
+.header-date-value {
+  color: var(--y-green-dark);
+  font-weight: 700;
+}
+
+.meta-dot {
+  color: var(--y-text-faint);
+}
+
+.header-spacer {
+  margin-left: auto;
+}
+
+/* =======================================================
+   BLOCK 02 - TỔNG QUAN HÔM NAY
+   ======================================================= */
+.today-summary {
+  margin: 14px 14px 0 14px;
+  background: var(--y-card-bg);
+  border-radius: var(--y-radius-lg);
+  box-shadow: var(--y-shadow-soft);
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.today-summary-label {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--y-text-sub);
+}
+
+.today-summary-value {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--y-green-dark);
+}
+
+/* =======================================================
+   BLOCK 03 - DANH SÁCH TRẠNG THÁI ĐƠN
+   ======================================================= */
+.dashboard-main {
+  flex: 1;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.status-card {
+  width: 100%;
+  min-height: 72px;
+  height: 76px;
+  background: var(--y-card-bg);
+  border-radius: var(--y-radius-lg);
+  box-shadow: var(--y-shadow-soft);
+  border: none;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-align: left;
+  cursor: pointer;
+  transition: transform 0.05s ease, box-shadow 0.05s ease;
+}
+
+.status-card:active {
+  transform: scale(0.98);
+  box-shadow: 0 1px 4px rgba(20, 40, 30, 0.08);
+}
+
+.status-icon {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  line-height: 1;
+}
+
+.bg-soft-green {
+  background: var(--y-green-soft);
+}
+
+.status-name {
+  flex: 1;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--y-text-main);
+}
+
+.status-badge {
+  flex-shrink: 0;
+  background: var(--y-green);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 800;
+  padding: 6px 14px;
+  border-radius: 100px;
+}
+
+/* ============================================================
+   RESPONSIVE — đảm bảo chuẩn 390px iPhone
+   ============================================================ */
+@media (max-width: 380px) {
+  .dashboard-main {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .today-summary {
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 14px;
+  }
+  .status-card {
+    padding: 0 12px;
+  }
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Kiểm soát đơn hàng - Ynhi OS</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="../css/order-dashboard.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="app-shell">
+
+  <!-- ===================================================== -->
+  <!-- BLOCK 01 - HEADER -->
+  <!-- ===================================================== -->
+  <header class="dashboard-header">
+    <button type="button" class="btn-back" aria-label="Quay lại">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M15 18l-6-6 6-6"/>
+      </svg>
+    </button>
+    <div class="header-title-group">
+      <h1 class="header-title">Kiểm soát đơn hàng</h1>
+      <div class="header-meta">
+        <span class="header-date-label">Hôm nay</span>
+        <span class="meta-dot">•</span>
+        <span class="header-date-value">06/07/2026</span>
+      </div>
+    </div>
+    <div class="header-spacer"></div>
+  </header>
+
+  <!-- ===================================================== -->
+  <!-- BLOCK 02 - TỔNG QUAN HÔM NAY -->
+  <!-- ===================================================== -->
+  <section class="today-summary">
+    <span class="today-summary-label">Tổng đơn hôm nay</span>
+    <span class="today-summary-value">18 đơn</span>
+  </section>
+
+  <!-- ===================================================== -->
+  <!-- BLOCK 03 - DANH SÁCH TRẠNG THÁI ĐƠN -->
+  <!-- ===================================================== -->
+  <main class="dashboard-main">
+
+    <button type="button" class="status-card">
+      <span class="status-icon bg-soft-green">⏳</span>
+      <span class="status-name">Chờ xác nhận</span>
+      <span class="status-badge">2 đơn</span>
+    </button>
+
+    <button type="button" class="status-card">
+      <span class="status-icon bg-soft-green">👨‍🍳</span>
+      <span class="status-name">Đang làm</span>
+      <span class="status-badge">5 đơn</span>
+    </button>
+
+    <button type="button" class="status-card">
+      <span class="status-icon bg-soft-green">📦</span>
+      <span class="status-name">Chờ giao</span>
+      <span class="status-badge">4 đơn</span>
+    </button>
+
+    <button type="button" class="status-card">
+      <span class="status-icon bg-soft-green">🚚</span>
+      <span class="status-name">Đang giao</span>
+      <span class="status-badge">1 đơn</span>
+    </button>
+
+    <button type="button" class="status-card">
+      <span class="status-icon bg-soft-green">✅</span>
+      <span class="status-name">Giao thành công</span>
+      <span class="status-badge">2 đơn</span>
+    </button>
+
+    <button type="button" class="status-card">
+      <span class="status-icon bg-soft-green">📁</span>
+      <span class="status-name">Hoàn thành</span>
+      <span class="status-badge">7 đơn</span>
+    </button>
+
+  </main>
+
+</div>
+
+</body>
+</html>
