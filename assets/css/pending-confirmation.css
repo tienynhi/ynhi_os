@@ -288,3 +288,219 @@ body {
   background: var(--y-green-softer);
   color: var(--y-text-sub);
 }
+/* =======================================================
+   BLOCK 04 - CALENDAR PLANNER
+   ======================================================= */
+.calendar-planner {
+  padding: 0 14px 24px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* PHẦN 1 - Thanh chọn tháng */
+.calendar-month-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 4px 0;
+}
+
+.calendar-month-nav {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  border-radius: 50%;
+  border: none;
+  background: var(--y-green-soft);
+  color: var(--y-green-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calendar-month-label {
+  font-size: 15.5px;
+  font-weight: 800;
+  color: var(--y-text-main);
+  min-width: 120px;
+  text-align: center;
+}
+
+/* PHẦN 2 - Thanh ngày ngang */
+.calendar-day-strip {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  scrollbar-width: none;
+}
+
+.calendar-day-strip::-webkit-scrollbar {
+  display: none;
+}
+
+.calendar-day-cell {
+  flex: 0 0 auto;
+  width: 54px;
+  min-width: 54px;
+  height: 72px;
+  border-radius: var(--y-radius-md);
+  border: 1.5px solid var(--y-green);
+  background: var(--y-card-bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.calendar-day-number {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--y-green-dark);
+}
+
+.calendar-day-name {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--y-text-sub);
+}
+
+.calendar-day-badge {
+  font-size: 11px;
+  font-weight: 800;
+  color: #ffffff;
+  background: var(--y-green);
+  padding: 2px 8px;
+  border-radius: 100px;
+}
+
+.calendar-day-cell.is-selected {
+  background: var(--y-green);
+  border-color: var(--y-green);
+}
+
+.calendar-day-cell.is-selected .calendar-day-number,
+.calendar-day-cell.is-selected .calendar-day-name {
+  color: #ffffff;
+}
+
+.calendar-day-cell.is-selected .calendar-day-badge {
+  background: #ffffff;
+  color: var(--y-green-dark);
+}
+
+/* PHẦN 3 - Timeline đơn của ngày được chọn */
+.calendar-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.calendar-timeline-heading {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--y-text-sub);
+  padding: 4px 2px;
+}
+
+.calendar-timeline-row {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.calendar-timeline-time {
+  flex: 0 0 auto;
+  min-width: 42px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--y-green-dark);
+  padding-top: 12px;
+}
+
+.mini-order-card {
+  flex: 1;
+  min-width: 0;
+  background: var(--y-card-bg);
+  border-radius: var(--y-radius-md);
+  box-shadow: var(--y-shadow-soft);
+  padding: 12px;
+}
+
+.mini-order-top {
+  margin-bottom: 4px;
+}
+
+.mini-order-code {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--y-text-sub);
+}
+
+.mini-order-name {
+  font-size: 14.5px;
+  font-weight: 800;
+  color: var(--y-text-main);
+  margin-bottom: 2px;
+}
+
+.mini-order-product {
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--y-text-sub);
+  margin-bottom: 8px;
+}
+
+.mini-order-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* PHẦN 4 - Đơn đặt trước (preview) */
+.calendar-advance-preview {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 4px;
+  border-top: 1px solid var(--y-border);
+}
+
+.advance-preview-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background: var(--y-green-softer);
+  border-radius: var(--y-radius-md);
+}
+
+.advance-preview-time {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--y-green-dark);
+  min-width: 42px;
+}
+
+.advance-preview-code {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--y-text-main);
+}
+
+/* ============================================================
+   RESPONSIVE — đảm bảo chuẩn 390px iPhone
+   ============================================================ */
+@media (max-width: 380px) {
+  .pending-tabs {
+    padding: 12px 10px;
+  }
+  .today-orders,
+  .calendar-planner {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
