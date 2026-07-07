@@ -255,3 +255,36 @@ body {
   align-items: center;
   justify-content: center;
 }
+/* --- BLOCK 03: hàng badge trạng thái thanh toán / giao ngay --- */
+.order-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.badge-payment {
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 100px;
+}
+
+.badge-payment-paid {
+  background: var(--y-green-soft);
+  color: var(--y-green-dark);
+}
+
+.badge-payment-later {
+  background: #fdf1e4;
+  color: #b76a1a;
+}
+
+.badge-instant {
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 100px;
+  background: var(--y-green-softer);
+  color: var(--y-text-sub);
+}
