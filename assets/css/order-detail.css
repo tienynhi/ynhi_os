@@ -444,11 +444,22 @@ body {
 }
 
 /* ============================================================
-   PRINT MODE — Phiếu in cho bếp
-   Nguyên tắc: nền trắng, không shadow, không nền xanh đặc,
-   badge chỉ dùng border + chữ, phân cách bằng border-bottom
+   PRINT MODE — Phiếu in cho bếp (chuẩn máy in nhiệt 80mm)
+   Nguyên tắc: nền trắng, chữ đen, không shadow, không màu xanh,
+   phân cách section bằng border-bottom, badge chỉ dùng border
    ============================================================ */
+@page {
+  size: 80mm auto;
+  margin: 0;
+}
+
 @media print {
+
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
   .no-print {
     display: none !important;
   }
@@ -457,30 +468,43 @@ body {
     display: block !important;
   }
 
-  body,
+  html,
+  body {
+    width: 80mm;
+    background: #ffffff;
+    color: #000000;
+    font-size: 13px;
+  }
+
   .app-shell {
     background: #ffffff;
-    max-width: 100%;
+    max-width: 80mm;
+    width: 80mm;
     min-height: 0;
+    margin: 0;
+    padding: 0 2mm;
   }
 
   .print-header {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 0 10px 0;
-    border-bottom: 2px solid #000000;
-    margin-bottom: 12px;
+    justify-content: center;
+    gap: 2px;
+    padding: 0 0 8px 0;
+    border-bottom: 1px solid #000000;
+    margin-bottom: 8px;
+    text-align: center;
   }
 
   .print-header-title {
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 800;
     color: #000000;
   }
 
   .print-header-code {
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 800;
     color: #000000;
   }
@@ -491,14 +515,15 @@ body {
   }
 
   .detail-section {
-    background: #ffffff;
-    box-shadow: none;
-    border: none;
-    border-bottom: 1px solid #000000;
-    border-radius: 0;
-    padding: 10px 0;
-    page-break-inside: avoid;
-  }
+    background:#fff;
+    box-shadow:none;
+    border:none;
+    border-bottom:1px solid #000;
+    border-radius:0;
+    padding:8px 0;
+    page-break-inside:avoid;
+    break-inside: avoid;
+}
 
   .detail-section-highlight {
     border: none;
@@ -506,27 +531,71 @@ body {
   }
 
   .section-icon {
-    background: none;
+    display: none;
+  }
+
+  .section-header {
+    gap: 0;
+  }
+
+  .section-title {
+    font-size: 15px;
+    font-weight: 800;
     color: #000000;
   }
 
-  .section-title,
+  .section-divider {
+    background: #000000;
+    opacity: 0.4;
+    margin: 6px 0;
+  }
+
+  .status-label,
+  .info-label,
+  .summary-label,
+  .detail-product-qty,
+  .plain-text {
+    font-size: 14px;
+    color: #000000;
+  }
+
   .status-value,
   .info-value,
-  .detail-product-name,
-  .detail-product-qty,
-  .highlight-text,
-  .plain-text,
-  .summary-label,
   .summary-value,
-  .status-label,
-  .info-label {
+  .detail-product-name,
+  .highlight-text {
+    font-size: 14px;
+    font-weight: 700;
     color: #000000;
+  }
+
+  .print-header-code,
+  .info-row:first-child .info-value {
+    font-size: 16px;
+    font-weight: 800;
+  }
+
+  .status-row,
+  .info-row {
+    padding: 5px 0;
+    border-bottom: none;
+  }
+
+  .detail-product-list {
+    gap: 6px;
   }
 
   .detail-product-card {
-    background: none;
-    border: 1px solid #000000;
+    background:none;
+    border:1px solid #000;
+    border-radius:0;
+    box-shadow:none;
+    padding:6px 8px;
+    page-break-inside: avoid;
+}
+
+  .status-badge-row {
+    gap: 6px;
   }
 
   .badge-status,
@@ -535,18 +604,39 @@ body {
   .badge-payment-later,
   .badge-instant {
     border: 1px solid #000000;
+    border-radius: 0;
     color: #000000;
     background: none;
+    font-size: 12px;
+  }
+
+  .summary-divider {
+    background: #000000;
+    opacity: 0.4;
+  }
+
+  .summary-row-total .summary-label,
+  .summary-row-total .summary-value {
+    font-size: 15px;
+    font-weight: 800;
+    color: #000000;
   }
 
   .due-box {
     background: none;
     box-shadow: none;
     border: 1px solid #000000;
+    border-radius: 0;
+    padding: 8px;
   }
 
   .due-label,
   .due-value {
     color: #000000;
+  }
+
+  .due-value {
+    font-size: 16px;
+    font-weight: 800;
   }
 }
