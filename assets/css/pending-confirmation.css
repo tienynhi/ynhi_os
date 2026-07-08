@@ -484,11 +484,6 @@ body {
   color: var(--y-text-main);
 }
 
-.calendar-order-link {
-  display: block;
-  text-decoration: none;
-  color: inherit;
-}
 /* ============================================================
    RESPONSIVE — đảm bảo chuẩn 390px iPhone
    ============================================================ */
