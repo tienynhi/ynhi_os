@@ -29,13 +29,26 @@
   <!-- BLOCK 02 - TAB -->
   <!-- ===================================================== -->
   <nav class="pending-tabs">
-    <button type="button" class="tab-item is-active">Đơn hôm nay</button>
-    <button type="button" class="tab-item">Calendar</button>
+    <button
+type="button"
+id="tab-today"
+class="tab-item is-active"
+onclick="showTodayPanel()">
+Đơn hôm nay
+</button>
+
+<button
+type="button"
+id="tab-calendar"
+class="tab-item"
+onclick="showCalendarPanel()">
+Calendar
+</button>
   </nav>
   <!-- ===================================================== -->
   <!-- BLOCK 03 - ĐƠN HÔM NAY -->
   <!-- ===================================================== -->
-  <main class="today-orders">
+  <main id="today-panel" class="today-orders">
 
   <div class="order-card">
     <div class="order-card-row order-card-top">
@@ -136,7 +149,9 @@
 <!-- ===================================================== -->
   <!-- BLOCK 04 - CALENDAR PLANNER -->
   <!-- ===================================================== -->
-  <section class="calendar-planner">
+  <section
+id="calendar-panel"
+class="calendar-planner">
 
     <!-- PHẦN 1 - Thanh chọn tháng -->
     <div class="calendar-month-bar">
@@ -257,6 +272,22 @@
   </section>
 
 </div>
+<script>
+function showTodayPanel() {
+  document.getElementById('tab-today').classList.add('is-active');
+  document.getElementById('tab-calendar').classList.remove('is-active');
 
+  document.getElementById('today-panel').style.display = 'flex';
+  document.getElementById('calendar-panel').style.display = 'none';
+}
+
+function showCalendarPanel() {
+  document.getElementById('tab-calendar').classList.add('is-active');
+  document.getElementById('tab-today').classList.remove('is-active');
+
+  document.getElementById('calendar-panel').style.display = 'flex';
+  document.getElementById('today-panel').style.display = 'none';
+}
+</script>
 </body>
 </html>
