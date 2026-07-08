@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Chi tiết đơn - Ynhi OS</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="../assets/css/order-detail.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="app-shell">
+
+  <!-- ===================================================== -->
+  <!-- BLOCK 01 - HEADER -->
+  <!-- ===================================================== -->
+  <header class="detail-header no-print">
+    <button type="button" class="btn-back" aria-label="Quay lại">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M15 18l-6-6 6-6"/>
+      </svg>
+    </button>
+    <div class="header-title-group">
+      <h1 class="header-title">Chi tiết đơn</h1>
+      <span class="header-order-code">#DH00124</span>
+    </div>
+    <div class="header-spacer"></div>
+    <button type="button" class="btn-edit" aria-label="Sửa đơn">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+        <path d="M18.5 2.5a2.12 2.12 0 0 1 3 3L12 15l-4 1 1-4z"/>
+      </svg>
+    </button>
+  </header>
+
+  <!-- Print-only header, hidden on screen -->
+  <div class="print-header print-only">
+    <div class="print-header-title">PHIẾU ĐƠN HÀNG — YNHI</div>
+    <div class="print-header-code">#DH00124</div>
+  </div>
+
+  <main class="detail-main">
+
+    <!-- ===================================================== -->
+    <!-- BLOCK 02 - TRẠNG THÁI ĐƠN -->
+    <!-- ===================================================== -->
+    <section class="detail-section">
+      <div class="section-title">Trạng thái đơn</div>
+      <div class="status-row">
+        <span class="status-label">Ngày giao</span>
+        <span class="status-value">07/07/2026</span>
+      </div>
+      <div class="status-row">
+        <span class="status-label">Giờ giao</span>
+        <span class="status-value">14:30</span>
+      </div>
+      <div class="status-row">
+        <span class="status-label">Trạng thái</span>
+        <span class="status-value">Chờ xác nhận</span>
+      </div>
+      <div class="status-badge-row">
+        <span class="badge-outline">Đã thanh toán</span>
+        <span class="badge-outline">Giao ngay</span>
+      </div>
+    </section>
+
+    <!-- ===================================================== -->
+    <!-- BLOCK 03 - KHÁCH HÀNG -->
+    <!-- ===================================================== -->
+    <section class="detail-section">
+      <div class="section-title">Khách hàng</div>
+      <div class="info-row">
+        <span class="info-label">Tên</span>
+        <span class="info-value">Chị Hồng Nhung</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">SĐT</span>
+        <span class="info-value">0909 123 456</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Địa chỉ</span>
+        <span class="info-value">12 Trần Hưng Đạo</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Loại khách</span>
+        <span class="info-value">Khách quen</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Nguồn khách</span>
+        <span class="info-value">Facebook</span>
+      </div>
+    </section>
+
+    <!-- ===================================================== -->
+    <!-- BLOCK 04 - SẢN PHẨM -->
+    <!-- ===================================================== -->
+    <section class="detail-section">
+      <div class="section-title">Sản phẩm</div>
+      <div class="detail-product-row">
+        <span class="detail-product-name">Bánh kem dâu tây size 20cm</span>
+        <span class="detail-product-qty">x1</span>
+      </div>
+      <div class="detail-product-row">
+        <span class="detail-product-name">Bánh su kem hộp 6 cái</span>
+        <span class="detail-product-qty">x2</span>
+      </div>
+      <div class="detail-product-row">
+        <span class="detail-product-name">Nến sinh nhật</span>
+        <span class="detail-product-qty">x1</span>
+      </div>
+    </section>
+
+    <!-- ===================================================== -->
+    <!-- BLOCK 05 - THÔNG TIN GIAO -->
+    <!-- ===================================================== -->
+    <section class="detail-section">
+      <div class="section-title">Thông tin giao</div>
+      <div class="info-row">
+        <span class="info-label">Ngày giao</span>
+        <span class="info-value">07/07/2026</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Giờ giao</span>
+        <span class="info-value">14:30</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Đơn vị ship</span>
+        <span class="info-value">Grab</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Phí ship</span>
+        <span class="info-value">25.000đ</span>
+      </div>
+    </section>
+
+    <!-- ===================================================== -->
+    <!-- BLOCK 06 - KHÁCH DẶN -->
+    <!-- ===================================================== -->
+    <section class="detail-section detail-section-highlight">
+      <div class="section-title">Khách dặn</div>
+      <p class="highlight-text">Viết chữ "Chúc mừng sinh nhật Bo" trên bánh. Giao trước 5h chiều, gọi trước khi giao.</p>
+    </section>
+
+    <!-- ===================================================== -->
+    <!-- BLOCK 07 - GHI CHÚ NỘI BỘ -->
+    <!-- ===================================================== -->
+    <section class="detail-section">
+      <div class="section-title">Ghi chú nội bộ</div>
+      <p class="plain-text">Không dùng hạt, khách bị dị ứng. Ship cổng sau.</p>
+    </section>
+
+    <!-- ===================================================== -->
+    <!-- BLOCK 08 - THANH TOÁN -->
+    <!-- ===================================================== -->
+    <section class="detail-section">
+      <div class="section-title">Thanh toán</div>
+      <div class="summary-row">
+        <span class="summary-label">Tiền bánh</span>
+        <span class="summary-value">450.000đ</span>
+      </div>
+      <div class="summary-row">
+        <span class="summary-label">Phí ship</span>
+        <span class="summary-value">25.000đ</span>
+      </div>
+      <div class="summary-row">
+        <span class="summary-label">Giảm giá</span>
+        <span class="summary-value">-20.000đ</span>
+      </div>
+      <div class="summary-divider"></div>
+      <div class="summary-row summary-row-total">
+        <span class="summary-label">Tổng cộng</span>
+        <span class="summary-value">455.000đ</span>
+      </div>
+      <div class="summary-row summary-row-due">
+        <span class="summary-label">Khách cần trả</span>
+        <span class="summary-value">455.000đ</span>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================================================== -->
+  <!-- BLOCK 09 - ACTION (trạng thái Chờ xác nhận) -->
+  <!-- ===================================================== -->
+  <footer class="detail-footer no-print">
+    <button type="button" class="btn-footer btn-footer-outline">In phiếu</button>
+    <button type="button" class="btn-footer btn-footer-solid">Xác nhận</button>
+  </footer>
+
+</div>
+
+</body>
+</html>

@@ -29,129 +29,101 @@
   <!-- BLOCK 02 - TAB -->
   <!-- ===================================================== -->
   <nav class="pending-tabs">
-    <button
-type="button"
-id="tab-today"
-class="tab-item is-active"
-onclick="showTodayPanel()">
-Đơn hôm nay
-</button>
-
-<button
-type="button"
-id="tab-calendar"
-class="tab-item"
-onclick="showCalendarPanel()">
-Calendar
-</button>
+    <button type="button" class="tab-item is-active">Đơn hôm nay</button>
+    <button type="button" class="tab-item">Calendar</button>
   </nav>
+
   <!-- ===================================================== -->
   <!-- BLOCK 03 - ĐƠN HÔM NAY -->
   <!-- ===================================================== -->
-  <main id="today-panel" class="today-orders">
+  <main class="today-orders">
 
-  <div class="order-card">
-    <div class="order-card-row order-card-top">
-      <span class="order-time">🕒 14:30</span>
-      <span class="order-code-badge">#DH00124</span>
+    <div class="order-card">
+      <a href="order-detail.html" class="order-card-link">
+        <div class="order-card-row order-card-top">
+          <span class="order-time">🕒 14:30</span>
+          <span class="order-code-badge">#DH00124</span>
+        </div>
+        <div class="order-badge-row">
+          <span class="badge-payment badge-payment-paid">🟢 Đã thanh toán</span>
+          <span class="badge-instant">⚡ Giao ngay</span>
+        </div>
+        <div class="order-customer-name">Chị Hồng Nhung</div>
+        <div class="order-product-list">
+          <span class="order-product-item">• Bánh kem dâu tây 20cm</span>
+          <span class="order-product-item">• Nến sinh nhật</span>
+        </div>
+        <div class="order-address">
+          <span class="order-address-icon">📍</span>
+          <span class="order-address-text">12 Trần Hưng Đạo</span>
+        </div>
+      </a>
+      <div class="order-card-actions">
+        <button type="button" class="btn-order-confirm">Xác nhận</button>
+        <button type="button" class="btn-order-print">In phiếu</button>
+        <button type="button" class="btn-order-more" aria-label="Tùy chọn khác">⋮</button>
+      </div>
     </div>
 
-    <div class="order-badge-row">
-      <span class="badge-payment badge-payment-paid">🟢 Đã thanh toán</span>
-      <span class="badge-instant">⚡ Giao ngay</span>
+    <div class="order-card">
+      <a href="order-detail.html" class="order-card-link">
+        <div class="order-card-row order-card-top">
+          <span class="order-time">🕒 15:00</span>
+          <span class="order-code-badge">#DH00125</span>
+        </div>
+        <div class="order-badge-row">
+          <span class="badge-payment badge-payment-later">🟠 Thanh toán sau</span>
+        </div>
+        <div class="order-customer-name">Anh Minh Quân</div>
+        <div class="order-product-list">
+          <span class="order-product-item">• Bánh su kem hộp 6 cái</span>
+          <span class="order-product-item">• Thiệp chúc mừng</span>
+        </div>
+        <div class="order-address">
+          <span class="order-address-icon">📍</span>
+          <span class="order-address-text">45 Nguyễn Huệ</span>
+        </div>
+      </a>
+      <div class="order-card-actions">
+        <button type="button" class="btn-order-confirm">Xác nhận</button>
+        <button type="button" class="btn-order-print">In phiếu</button>
+        <button type="button" class="btn-order-more" aria-label="Tùy chọn khác">⋮</button>
+      </div>
     </div>
 
-    <div class="order-customer-name">
-      Chị Hồng Nhung
+    <div class="order-card">
+      <a href="order-detail.html" class="order-card-link">
+        <div class="order-card-row order-card-top">
+          <span class="order-time">🕒 17:30</span>
+          <span class="order-code-badge">#DH00126</span>
+        </div>
+        <div class="order-badge-row">
+          <span class="badge-payment badge-payment-paid">🟢 Đã thanh toán</span>
+        </div>
+        <div class="order-customer-name">Chị Bảo Trân</div>
+        <div class="order-product-list">
+          <span class="order-product-item">• Bánh mousse chanh dây mini</span>
+          <span class="order-product-item">• Bánh red velvet size 18cm</span>
+          <span class="order-product-item">• Mũ sinh nhật</span>
+        </div>
+        <div class="order-address">
+          <span class="order-address-icon">📍</span>
+          <span class="order-address-text">78 Lê Lợi</span>
+        </div>
+      </a>
+      <div class="order-card-actions">
+        <button type="button" class="btn-order-confirm">Xác nhận</button>
+        <button type="button" class="btn-order-print">In phiếu</button>
+        <button type="button" class="btn-order-more" aria-label="Tùy chọn khác">⋮</button>
+      </div>
     </div>
 
-    <div class="order-product-list">
-      <span class="order-product-item">• Bánh kem dâu tây 20cm</span>
-      <span class="order-product-item">• Nến sinh nhật</span>
-    </div>
+  </main>
 
-    <div class="order-address">
-      <span class="order-address-icon">📍</span>
-      <span class="order-address-text">12 Trần Hưng Đạo</span>
-    </div>
-
-    <div class="order-card-actions">
-      <button type="button" class="btn-order-confirm">Xác nhận</button>
-      <button type="button" class="btn-order-print">In phiếu</button>
-      <button type="button" class="btn-order-more">⋮</button>
-    </div>
-  </div>
-
-  <div class="order-card">
-    <div class="order-card-row order-card-top">
-      <span class="order-time">🕒 15:00</span>
-      <span class="order-code-badge">#DH00125</span>
-    </div>
-
-    <div class="order-badge-row">
-      <span class="badge-payment badge-payment-later">🟠 Thanh toán sau</span>
-    </div>
-
-    <div class="order-customer-name">
-      Anh Minh Quân
-    </div>
-
-    <div class="order-product-list">
-      <span class="order-product-item">• Bánh su kem hộp 6 cái</span>
-      <span class="order-product-item">• Thiệp chúc mừng</span>
-    </div>
-
-    <div class="order-address">
-      <span class="order-address-icon">📍</span>
-      <span class="order-address-text">45 Nguyễn Huệ</span>
-    </div>
-
-    <div class="order-card-actions">
-      <button type="button" class="btn-order-confirm">Xác nhận</button>
-      <button type="button" class="btn-order-print">In phiếu</button>
-      <button type="button" class="btn-order-more">⋮</button>
-    </div>
-  </div>
-
-  <div class="order-card">
-    <div class="order-card-row order-card-top">
-      <span class="order-time">🕒 17:30</span>
-      <span class="order-code-badge">#DH00126</span>
-    </div>
-
-    <div class="order-badge-row">
-      <span class="badge-payment badge-payment-paid">🟢 Đã thanh toán</span>
-    </div>
-
-    <div class="order-customer-name">
-      Chị Bảo Trân
-    </div>
-
-    <div class="order-product-list">
-      <span class="order-product-item">• Bánh mousse chanh dây mini</span>
-      <span class="order-product-item">• Bánh red velvet size 18cm</span>
-      <span class="order-product-item">• Mũ sinh nhật</span>
-    </div>
-
-    <div class="order-address">
-      <span class="order-address-icon">📍</span>
-      <span class="order-address-text">78 Lê Lợi</span>
-    </div>
-
-    <div class="order-card-actions">
-      <button type="button" class="btn-order-confirm">Xác nhận</button>
-      <button type="button" class="btn-order-print">In phiếu</button>
-      <button type="button" class="btn-order-more">⋮</button>
-    </div>
-  </div>
-
-</main>
-<!-- ===================================================== -->
+  <!-- ===================================================== -->
   <!-- BLOCK 04 - CALENDAR PLANNER -->
   <!-- ===================================================== -->
-  <section
-id="calendar-panel"
-class="calendar-planner">
+  <section class="calendar-planner">
 
     <!-- PHẦN 1 - Thanh chọn tháng -->
     <div class="calendar-month-bar">
@@ -272,22 +244,6 @@ class="calendar-planner">
   </section>
 
 </div>
-<script>
-function showTodayPanel() {
-  document.getElementById('tab-today').classList.add('is-active');
-  document.getElementById('tab-calendar').classList.remove('is-active');
 
-  document.getElementById('today-panel').style.display = 'flex';
-  document.getElementById('calendar-panel').style.display = 'none';
-}
-
-function showCalendarPanel() {
-  document.getElementById('tab-calendar').classList.add('is-active');
-  document.getElementById('tab-today').classList.remove('is-active');
-
-  document.getElementById('calendar-panel').style.display = 'flex';
-  document.getElementById('today-panel').style.display = 'none';
-}
-</script>
 </body>
 </html>
