@@ -1,6 +1,7 @@
 /* ============================================================
-   YNHI OS — PENDING CONFIRMATION (Chờ xác nhận)
+   YNHI OS — ORDER DETAIL (Chi tiết đơn)
    Mobile-first, chuẩn iPhone 390px, cùng Design System hệ thống
+   Đồng thời chuẩn bị sẵn cho @media print (phiếu bếp)
    ============================================================ */
 
 :root {
@@ -18,6 +19,7 @@
   --y-radius-md: 14px;
   --y-shadow-soft: 0 2px 8px rgba(20, 40, 30, 0.05);
   --y-header-h: 64px;
+  --y-footer-h: 84px;
 }
 
 * {
@@ -42,10 +44,14 @@ body {
   flex-direction: column;
 }
 
+.print-only {
+  display: none;
+}
+
 /* =======================================================
    BLOCK 01 - HEADER
    ======================================================= */
-.pending-header {
+.detail-header {
   height: var(--y-header-h);
   min-height: var(--y-header-h);
   display: flex;
@@ -72,6 +78,12 @@ body {
   justify-content: center;
 }
 
+.header-title-group {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
 .header-title {
   font-size: 18px;
   font-weight: 800;
@@ -79,98 +91,117 @@ body {
   color: var(--y-text-main);
 }
 
+.header-order-code {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--y-green-dark);
+}
+
 .header-spacer {
   margin-left: auto;
 }
 
-.header-count-badge {
-  flex-shrink: 0;
-  background: var(--y-green);
-  color: #ffffff;
-  font-size: 13px;
-  font-weight: 800;
-  padding: 6px 14px;
-  border-radius: 100px;
-}
-
-/* =======================================================
-   BLOCK 02 - TAB
-   ======================================================= */
-.pending-tabs {
-  display: flex;
-  gap: 8px;
-  padding: 14px;
-}
-
-.tab-item {
-  flex: 1 1 50%;
-  height: 44px;
-  border-radius: var(--y-radius-md);
-  border: 1.5px solid var(--y-green);
-  background: var(--y-card-bg);
+.btn-edit {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  border-radius: 50%;
+  border: none;
+  background: var(--y-green-soft);
   color: var(--y-green-dark);
-  font-size: 14.5px;
-  font-weight: 700;
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-}
-
-.tab-item.is-active {
-  background: var(--y-green);
-  border-color: var(--y-green);
-  color: #ffffff;
 }
 
 /* =======================================================
-   BLOCK 03 - ĐƠN HÔM NAY
+   MAIN / SECTIONS
    ======================================================= */
-.today-orders {
+.detail-main {
   flex: 1;
-  padding: 0 14px 14px 14px;
+  padding: 14px 14px calc(var(--y-footer-h) + 14px) 14px;
   display: flex;
   flex-direction: column;
   gap: 14px;
 }
 
-.order-card {
+.detail-section {
   background: var(--y-card-bg);
   border-radius: var(--y-radius-lg);
   box-shadow: var(--y-shadow-soft);
   padding: 16px;
 }
 
-.order-card-row {
+.section-header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 10px;
 }
 
-.order-card-top {
-  margin-bottom: 10px;
-}
-
-.order-time {
-  font-size: 14px;
-  font-weight: 700;
+.section-icon {
+  width: 34px;
+  height: 34px;
+  min-width: 34px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: var(--y-green-dark);
 }
 
-.order-code-badge {
-  font-size: 12px;
+.bg-soft-green {
+  background: var(--y-green-soft);
+}
+
+.section-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--y-text-main);
+}
+
+.section-divider {
+  height: 1px;
+  background: var(--y-border);
+  margin: 12px 0;
+}
+
+/* =======================================================
+   BLOCK 02 - THÔNG TIN ĐƠN / BADGE
+   ======================================================= */
+.status-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 0;
+}
+
+.status-label {
+  font-size: 13.5px;
+  color: var(--y-text-sub);
+  font-weight: 500;
+}
+
+.status-value {
+  font-size: 13.5px;
+  color: var(--y-text-main);
+  font-weight: 700;
+}
+
+.status-badge-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.badge-status {
+  font-size: 11.5px;
   font-weight: 700;
   color: var(--y-text-sub);
   background: var(--y-green-softer);
   padding: 4px 10px;
   border-radius: 100px;
-}
-
-.order-badge-row {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  margin-bottom: 10px;
 }
 
 .badge-payment {
@@ -199,307 +230,323 @@ body {
   color: var(--y-text-sub);
 }
 
-.order-customer-name {
-  font-size: 17px;
-  font-weight: 800;
-  color: var(--y-text-main);
-  margin-bottom: 8px;
-}
-
-.order-product-list {
+/* =======================================================
+   BLOCK 03 / 05 - THÔNG TIN DẠNG NHÃN - GIÁ TRỊ
+   ======================================================= */
+.info-row {
   display: flex;
-  flex-direction: column;
-  gap: 3px;
-  margin-bottom: 10px;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--y-border);
 }
 
-.order-product-item {
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--y-text-main);
+.info-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
 }
 
-.order-address {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  margin-bottom: 14px;
+.info-row:first-child {
+  padding-top: 0;
 }
 
-.order-address-icon {
+.info-label {
   font-size: 13px;
-  line-height: 1;
-}
-
-.order-address-text {
-  font-size: 13px;
+  color: var(--y-text-sub);
   font-weight: 500;
-  color: var(--y-text-sub);
+  flex-shrink: 0;
 }
 
-.order-card-actions {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.btn-order-confirm {
-  flex: 1;
-  height: 44px;
-  border-radius: var(--y-radius-md);
-  border: none;
-  background: var(--y-green);
-  color: #ffffff;
-  font-size: 14.5px;
+.info-value {
+  font-size: 13.5px;
+  color: var(--y-text-main);
   font-weight: 700;
-  box-shadow: 0 3px 10px rgba(23, 163, 90, 0.28);
-}
-
-.btn-order-print {
-  flex: 1;
-  height: 44px;
-  border-radius: var(--y-radius-md);
-  border: 1.5px solid var(--y-green);
-  background: var(--y-card-bg);
-  color: var(--y-green-dark);
-  font-size: 14.5px;
-  font-weight: 700;
-}
-
-.btn-order-more {
-  width: 44px;
-  height: 44px;
-  min-width: 44px;
-  border-radius: var(--y-radius-md);
-  border: none;
-  background: var(--y-green-softer);
-  color: var(--y-text-sub);
-  font-size: 18px;
-  font-weight: 800;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  text-align: right;
 }
 
 /* =======================================================
-   BLOCK 04 - CALENDAR PLANNER
+   BLOCK 04 - SẢN PHẨM (danh sách card nhỏ, chỉ đọc)
    ======================================================= */
-.calendar-planner {
-  padding: 0 14px 24px 14px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-/* PHẦN 1 - Thanh chọn tháng */
-.calendar-month-bar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  padding: 4px 0;
-}
-
-.calendar-month-nav {
-  width: 36px;
-  height: 36px;
-  min-width: 36px;
-  border-radius: 50%;
-  border: none;
-  background: var(--y-green-soft);
-  color: var(--y-green-dark);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.calendar-month-label {
-  font-size: 15.5px;
-  font-weight: 800;
-  color: var(--y-text-main);
-  min-width: 120px;
-  text-align: center;
-}
-
-/* PHẦN 2 - Thanh ngày ngang */
-.calendar-day-strip {
-  display: flex;
-  gap: 8px;
-  overflow-x: auto;
-  padding-bottom: 4px;
-  scrollbar-width: none;
-}
-
-.calendar-day-strip::-webkit-scrollbar {
-  display: none;
-}
-
-.calendar-day-cell {
-  flex: 0 0 auto;
-  width: 54px;
-  min-width: 54px;
-  height: 72px;
-  border-radius: var(--y-radius-md);
-  border: 1.5px solid var(--y-green);
-  background: var(--y-card-bg);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-}
-
-.calendar-day-number {
-  font-size: 15px;
-  font-weight: 800;
-  color: var(--y-green-dark);
-}
-
-.calendar-day-name {
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--y-text-sub);
-}
-
-.calendar-day-badge {
-  font-size: 11px;
-  font-weight: 800;
-  color: #ffffff;
-  background: var(--y-green);
-  padding: 2px 8px;
-  border-radius: 100px;
-}
-
-.calendar-day-cell.is-selected {
-  background: var(--y-green);
-  border-color: var(--y-green);
-}
-
-.calendar-day-cell.is-selected .calendar-day-number,
-.calendar-day-cell.is-selected .calendar-day-name {
-  color: #ffffff;
-}
-
-.calendar-day-cell.is-selected .calendar-day-badge {
-  background: #ffffff;
-  color: var(--y-green-dark);
-}
-
-/* PHẦN 3 - Timeline đơn của ngày được chọn */
-.calendar-timeline {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.calendar-timeline-heading {
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--y-text-sub);
-  padding: 4px 2px;
-}
-
-.calendar-timeline-row {
-  display: flex;
-  gap: 10px;
-  align-items: flex-start;
-}
-
-.calendar-timeline-time {
-  flex: 0 0 auto;
-  min-width: 42px;
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--y-green-dark);
-  padding-top: 12px;
-}
-
-.mini-order-card {
-  flex: 1;
-  min-width: 0;
-  background: var(--y-card-bg);
-  border-radius: var(--y-radius-md);
-  box-shadow: var(--y-shadow-soft);
-  padding: 12px;
-}
-
-.mini-order-top {
-  margin-bottom: 4px;
-}
-
-.mini-order-code {
-  font-size: 11.5px;
-  font-weight: 700;
-  color: var(--y-text-sub);
-}
-
-.mini-order-name {
-  font-size: 14.5px;
-  font-weight: 800;
-  color: var(--y-text-main);
-  margin-bottom: 2px;
-}
-
-.mini-order-product {
-  font-size: 12.5px;
-  font-weight: 500;
-  color: var(--y-text-sub);
-  margin-bottom: 8px;
-}
-
-.mini-order-badge-row {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-/* PHẦN 4 - Đơn đặt trước (preview) */
-.calendar-advance-preview {
+.detail-product-list {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  padding-top: 4px;
-  border-top: 1px solid var(--y-border);
 }
 
-.advance-preview-row {
+.detail-product-card {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 10px 12px;
+  justify-content: space-between;
   background: var(--y-green-softer);
   border-radius: var(--y-radius-md);
+  padding: 12px 14px;
 }
 
-.advance-preview-time {
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--y-green-dark);
-  min-width: 42px;
-}
-
-.advance-preview-code {
-  font-size: 13.5px;
+.detail-product-name {
+  font-size: 14px;
   font-weight: 600;
   color: var(--y-text-main);
+}
+
+.detail-product-qty {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--y-green-dark);
+  flex-shrink: 0;
+}
+
+/* =======================================================
+   BLOCK 06 - KHÁCH DẶN (nổi bật, viền xanh, không nền đặc)
+   ======================================================= */
+.detail-section-highlight {
+  border: 1.5px solid var(--y-green);
+}
+
+.highlight-text {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--y-text-main);
+}
+
+/* =======================================================
+   GHI CHÚ NỘI BỘ
+   ======================================================= */
+.plain-text {
+  margin: 0;
+  font-size: 13.5px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--y-text-sub);
+}
+
+/* =======================================================
+   BLOCK 08 - THANH TOÁN (đồng bộ style New Order)
+   ======================================================= */
+.summary-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 0;
+}
+
+.summary-label {
+  font-size: 14.5px;
+  color: var(--y-text-sub);
+  font-weight: 500;
+}
+
+.summary-value {
+  font-size: 14.5px;
+  color: var(--y-text-main);
+  font-weight: 700;
+}
+
+.summary-divider {
+  height: 1px;
+  background: var(--y-border);
+  margin: 8px 0;
+}
+
+.summary-row-total .summary-label {
+  font-size: 15.5px;
+  font-weight: 700;
+  color: var(--y-text-main);
+}
+
+.summary-row-total .summary-value {
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.due-box {
+  margin-top: 14px;
+  background: var(--y-green);
+  border-radius: var(--y-radius-md);
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 6px 18px rgba(23, 163, 90, 0.3);
+}
+
+.due-label {
+  font-size: 13.5px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.due-value {
+  font-size: 23px;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+/* =======================================================
+   BLOCK 09 - ACTION (Chờ xác nhận)
+   ======================================================= */
+.detail-footer {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 430px;
+  height: var(--y-footer-h);
+  background: var(--y-card-bg);
+  border-top: 1px solid var(--y-border);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px calc(env(safe-area-inset-bottom, 0px) + 12px) 14px;
+  z-index: 30;
+  box-shadow: 0 -6px 20px rgba(20, 40, 30, 0.06);
+}
+
+.btn-footer {
+  flex: 1;
+  height: 52px;
+  border-radius: var(--y-radius-md);
+  font-size: 15.5px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-footer-outline {
+  border: 1.5px solid var(--y-green);
+  background: var(--y-card-bg);
+  color: var(--y-green-dark);
+}
+
+.btn-footer-solid {
+  border: none;
+  background: var(--y-green);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(23, 163, 90, 0.35);
 }
 
 /* ============================================================
    RESPONSIVE — đảm bảo chuẩn 390px iPhone
    ============================================================ */
 @media (max-width: 380px) {
-  .pending-tabs {
-    padding: 12px 10px;
-  }
-  .today-orders,
-  .calendar-planner {
+  .detail-main {
     padding-left: 10px;
     padding-right: 10px;
   }
+  .detail-section {
+    padding: 14px;
+  }
 }
 
-.order-card-link {
-  display: block;
-  text-decoration: none;
-  color: inherit;
+/* ============================================================
+   PRINT MODE — Phiếu in cho bếp
+   Nguyên tắc: nền trắng, không shadow, không nền xanh đặc,
+   badge chỉ dùng border + chữ, phân cách bằng border-bottom
+   ============================================================ */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  body,
+  .app-shell {
+    background: #ffffff;
+    max-width: 100%;
+    min-height: 0;
+  }
+
+  .print-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 0 10px 0;
+    border-bottom: 2px solid #000000;
+    margin-bottom: 12px;
+  }
+
+  .print-header-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: #000000;
+  }
+
+  .print-header-code {
+    font-size: 14px;
+    font-weight: 800;
+    color: #000000;
+  }
+
+  .detail-main {
+    padding: 0;
+    gap: 0;
+  }
+
+  .detail-section {
+    background: #ffffff;
+    box-shadow: none;
+    border: none;
+    border-bottom: 1px solid #000000;
+    border-radius: 0;
+    padding: 10px 0;
+    page-break-inside: avoid;
+  }
+
+  .detail-section-highlight {
+    border: none;
+    border-bottom: 1px solid #000000;
+  }
+
+  .section-icon {
+    background: none;
+    color: #000000;
+  }
+
+  .section-title,
+  .status-value,
+  .info-value,
+  .detail-product-name,
+  .detail-product-qty,
+  .highlight-text,
+  .plain-text,
+  .summary-label,
+  .summary-value,
+  .status-label,
+  .info-label {
+    color: #000000;
+  }
+
+  .detail-product-card {
+    background: none;
+    border: 1px solid #000000;
+  }
+
+  .badge-status,
+  .badge-payment,
+  .badge-payment-paid,
+  .badge-payment-later,
+  .badge-instant {
+    border: 1px solid #000000;
+    color: #000000;
+    background: none;
+  }
+
+  .due-box {
+    background: none;
+    box-shadow: none;
+    border: 1px solid #000000;
+  }
+
+  .due-label,
+  .due-value {
+    color: #000000;
+  }
 }

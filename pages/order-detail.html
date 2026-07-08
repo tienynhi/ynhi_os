@@ -15,7 +15,7 @@
   <!-- BLOCK 01 - HEADER -->
   <!-- ===================================================== -->
   <header class="detail-header no-print">
-    <button type="button" class="btn-back" aria-label="Quay lại">
+    <button type="button" class="btn-back" aria-label="Quay lại" onclick="location.href='pending-confirmation.html'">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
         <path d="M15 18l-6-6 6-6"/>
       </svg>
@@ -42,10 +42,20 @@
   <main class="detail-main">
 
     <!-- ===================================================== -->
-    <!-- BLOCK 02 - TRẠNG THÁI ĐƠN -->
+    <!-- BLOCK 02 - THÔNG TIN ĐƠN -->
     <!-- ===================================================== -->
     <section class="detail-section">
-      <div class="section-title">Trạng thái đơn</div>
+      <div class="section-header">
+        <span class="section-icon bg-soft-green">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="9"/>
+            <path d="M12 7v5l3.5 2"/>
+          </svg>
+        </span>
+        <span class="section-title">Thông tin đơn</span>
+      </div>
+      <div class="section-divider"></div>
+
       <div class="status-row">
         <span class="status-label">Ngày giao</span>
         <span class="status-value">07/07/2026</span>
@@ -54,13 +64,11 @@
         <span class="status-label">Giờ giao</span>
         <span class="status-value">14:30</span>
       </div>
-      <div class="status-row">
-        <span class="status-label">Trạng thái</span>
-        <span class="status-value">Chờ xác nhận</span>
-      </div>
+
       <div class="status-badge-row">
-        <span class="badge-outline">Đã thanh toán</span>
-        <span class="badge-outline">Giao ngay</span>
+        <span class="badge-status">Chờ xác nhận</span>
+        <span class="badge-payment badge-payment-paid">🟢 Đã thanh toán</span>
+        <span class="badge-instant">⚡ Giao ngay</span>
       </div>
     </section>
 
@@ -68,7 +76,17 @@
     <!-- BLOCK 03 - KHÁCH HÀNG -->
     <!-- ===================================================== -->
     <section class="detail-section">
-      <div class="section-title">Khách hàng</div>
+      <div class="section-header">
+        <span class="section-icon bg-soft-green">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+        </span>
+        <span class="section-title">Khách hàng</span>
+      </div>
+      <div class="section-divider"></div>
+
       <div class="info-row">
         <span class="info-label">Tên</span>
         <span class="info-value">Chị Hồng Nhung</span>
@@ -95,18 +113,29 @@
     <!-- BLOCK 04 - SẢN PHẨM -->
     <!-- ===================================================== -->
     <section class="detail-section">
-      <div class="section-title">Sản phẩm</div>
-      <div class="detail-product-row">
-        <span class="detail-product-name">Bánh kem dâu tây size 20cm</span>
-        <span class="detail-product-qty">x1</span>
+      <div class="section-header">
+        <span class="section-icon bg-soft-green">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 7h-3V6a4 4 0 0 0-8 0v1H6a1 1 0 0 0-1 1l1 12h12l1-12a1 1 0 0 0-1-1z"/>
+          </svg>
+        </span>
+        <span class="section-title">Sản phẩm</span>
       </div>
-      <div class="detail-product-row">
-        <span class="detail-product-name">Bánh su kem hộp 6 cái</span>
-        <span class="detail-product-qty">x2</span>
-      </div>
-      <div class="detail-product-row">
-        <span class="detail-product-name">Nến sinh nhật</span>
-        <span class="detail-product-qty">x1</span>
+      <div class="section-divider"></div>
+
+      <div class="detail-product-list">
+        <div class="detail-product-card">
+          <span class="detail-product-name">Bánh kem dâu tây size 20cm</span>
+          <span class="detail-product-qty">x1</span>
+        </div>
+        <div class="detail-product-card">
+          <span class="detail-product-name">Bánh su kem hộp 6 cái</span>
+          <span class="detail-product-qty">x2</span>
+        </div>
+        <div class="detail-product-card">
+          <span class="detail-product-name">Nến sinh nhật</span>
+          <span class="detail-product-qty">x1</span>
+        </div>
       </div>
     </section>
 
@@ -114,7 +143,19 @@
     <!-- BLOCK 05 - THÔNG TIN GIAO -->
     <!-- ===================================================== -->
     <section class="detail-section">
-      <div class="section-title">Thông tin giao</div>
+      <div class="section-header">
+        <span class="section-icon bg-soft-green">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="1" y="6" width="15" height="12" rx="1.5"/>
+            <path d="M16 10h4l3 3v5h-7z"/>
+            <circle cx="6" cy="20" r="1.6"/>
+            <circle cx="18" cy="20" r="1.6"/>
+          </svg>
+        </span>
+        <span class="section-title">Thông tin giao</span>
+      </div>
+      <div class="section-divider"></div>
+
       <div class="info-row">
         <span class="info-label">Ngày giao</span>
         <span class="info-value">07/07/2026</span>
@@ -134,18 +175,32 @@
     </section>
 
     <!-- ===================================================== -->
-    <!-- BLOCK 06 - KHÁCH DẶN -->
+    <!-- BLOCK 06 - KHÁCH DẶN & GHI CHÚ NỘI BỘ -->
     <!-- ===================================================== -->
     <section class="detail-section detail-section-highlight">
-      <div class="section-title">Khách dặn</div>
+      <div class="section-header">
+        <span class="section-icon bg-soft-green">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 4h16v12H8l-4 4z"/>
+          </svg>
+        </span>
+        <span class="section-title">Khách dặn</span>
+      </div>
+      <div class="section-divider"></div>
       <p class="highlight-text">Viết chữ "Chúc mừng sinh nhật Bo" trên bánh. Giao trước 5h chiều, gọi trước khi giao.</p>
     </section>
 
-    <!-- ===================================================== -->
-    <!-- BLOCK 07 - GHI CHÚ NỘI BỘ -->
-    <!-- ===================================================== -->
     <section class="detail-section">
-      <div class="section-title">Ghi chú nội bộ</div>
+      <div class="section-header">
+        <span class="section-icon bg-soft-green">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2a4 4 0 0 0-4 4v1a4 4 0 0 0 8 0V6a4 4 0 0 0-4-4z"/>
+            <path d="M6 21v-2a6 6 0 0 1 12 0v2"/>
+          </svg>
+        </span>
+        <span class="section-title">Ghi chú nội bộ</span>
+      </div>
+      <div class="section-divider"></div>
       <p class="plain-text">Không dùng hạt, khách bị dị ứng. Ship cổng sau.</p>
     </section>
 
@@ -153,7 +208,17 @@
     <!-- BLOCK 08 - THANH TOÁN -->
     <!-- ===================================================== -->
     <section class="detail-section">
-      <div class="section-title">Thanh toán</div>
+      <div class="section-header">
+        <span class="section-icon bg-soft-green">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="5" width="20" height="14" rx="2"/>
+            <path d="M2 10h20"/>
+          </svg>
+        </span>
+        <span class="section-title">Thanh toán</span>
+      </div>
+      <div class="section-divider"></div>
+
       <div class="summary-row">
         <span class="summary-label">Tiền bánh</span>
         <span class="summary-value">450.000đ</span>
@@ -166,14 +231,17 @@
         <span class="summary-label">Giảm giá</span>
         <span class="summary-value">-20.000đ</span>
       </div>
+
       <div class="summary-divider"></div>
+
       <div class="summary-row summary-row-total">
         <span class="summary-label">Tổng cộng</span>
         <span class="summary-value">455.000đ</span>
       </div>
-      <div class="summary-row summary-row-due">
-        <span class="summary-label">Khách cần trả</span>
-        <span class="summary-value">455.000đ</span>
+
+      <div class="due-box">
+        <span class="due-label">KHÁCH CẦN TRẢ</span>
+        <span class="due-value">455.000đ</span>
       </div>
     </section>
 
