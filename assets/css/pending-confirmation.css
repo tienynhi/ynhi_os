@@ -497,7 +497,21 @@ body {
     padding-right: 10px;
   }
 }
+/* =======================================================
+   PANEL SWITCHING
+   ======================================================= */
 
+#today-panel{
+    display:flex;
+}
+
+#calendar-panel{
+    display:none;
+}
+
+.is-hidden{
+    display:none;
+}
 .order-card-link {
   display: block;
   text-decoration: none;
