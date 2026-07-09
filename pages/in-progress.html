@@ -29,14 +29,19 @@
   <!-- BLOCK 02 - TAB -->
   <!-- ===================================================== -->
   <nav class="pending-tabs">
-    <button type="button"
-class="tab-item is-active">
+    <button
+type="button"
+id="tab-today"
+class="tab-item is-active"
+onclick="showTodayPanel()">
 Đơn hôm nay
 </button>
 
 <button
 type="button"
-class="tab-item">
+id="tab-calendar"
+class="tab-item"
+onclick="showCalendarPanel()">
 Calendar
 </button>
   </nav>
@@ -136,7 +141,9 @@ class="today-orders">
   <!-- ===================================================== -->
   <!-- BLOCK 04 - CALENDAR PLANNER -->
   <!-- ===================================================== -->
-  <section id="calendar-panel" class="calendar-planner">
+  <section
+id="calendar-panel"
+class="calendar-planner">
 
     <!-- PHẦN 1 - Thanh chọn tháng -->
     <div class="calendar-month-bar">
