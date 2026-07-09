@@ -512,3 +512,14 @@ body {
   text-decoration: none;
   color: inherit;
 }
+/* =======================================================
+   PANEL SWITCHING - Đơn hôm nay / Calendar
+   ======================================================= */
+
+#today-panel {
+  display: flex;
+}
+
+#calendar-panel {
+  display: none;
+}
