@@ -1,0 +1,18 @@
+/* ============================================================
+   YNHI OS — COMPLETED (Hoàn thành)
+   File override riêng của màn hình này.
+   Toàn bộ style dùng chung (Header, Tab, Card, Calendar, Timeline,
+   Panel Switching, Responsive) nằm ở:
+   assets/css/order-status-base.css
+   File này chỉ chứa badge trạng thái riêng của Completed.
+   ============================================================ */
+
+/* STATUS OVERRIDE */
+.badge-completed {
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 100px;
+  background: var(--y-border);
+  color: var(--y-text-sub);
+}
