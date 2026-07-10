@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Xác nhận đơn hàng - Ynhi OS</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="../assets/css/preview-order.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="app-shell">
+
+  <!-- ===================================================== -->
+  <!-- HEADER -->
+  <!-- ===================================================== -->
+  <header class="preview-header">
+    <button type="button" class="btn-back" aria-label="Quay lại" onclick="history.back()">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M15 18l-6-6 6-6"/>
+      </svg>
+    </button>
+    <div class="preview-logo-group">
+      <div class="preview-logo-mark">Y</div>
+      <div class="preview-title-group">
+        <span class="preview-title">Xác nhận đơn hàng</span>
+        <span class="preview-order-code">#DH00124</span>
+      </div>
+    </div>
+    <div class="header-spacer"></div>
+  </header>
+
+  <main class="preview-main">
+
+    <!-- ===================================================== -->
+    <!-- BÁNH -->
+    <!-- ===================================================== -->
+    <section class="preview-section">
+      <div class="preview-section-title">🎂 Bánh</div>
+      <div class="preview-divider"></div>
+      <div class="preview-product-list">
+        <div class="preview-product-row">
+          <span class="preview-product-name">Bánh kem dâu tây size 20cm</span>
+          <span class="preview-product-qty">x1</span>
+        </div>
+        <div class="preview-product-row">
+          <span class="preview-product-name">Bánh su kem hộp 6 cái</span>
+          <span class="preview-product-qty">x2</span>
+        </div>
+        <div class="preview-product-row">
+          <span class="preview-product-name">Nến sinh nhật</span>
+          <span class="preview-product-qty">x1</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================== -->
+    <!-- NGƯỜI NHẬN -->
+    <!-- ===================================================== -->
+    <section class="preview-section">
+      <div class="preview-section-title">👤 Người nhận</div>
+      <div class="preview-divider"></div>
+      <div class="preview-row">
+        <span class="preview-label">Tên</span>
+        <span class="preview-value">Chị Hồng Nhung</span>
+      </div>
+      <div class="preview-row">
+        <span class="preview-label">SĐT</span>
+        <span class="preview-value">0909 123 456</span>
+      </div>
+    </section>
+
+    <!-- ===================================================== -->
+    <!-- ĐỊA CHỈ -->
+    <!-- ===================================================== -->
+    <!-- ===================================================== -->
+<!-- GIAO HÀNG (gộp Địa chỉ + Ngày giao) -->
+<!-- ===================================================== -->
+<section class="preview-section">
+  <div class="preview-section-title">📍 Giao hàng</div>
+  <div class="preview-divider"></div>
+
+  <div class="preview-row">
+    <span class="preview-label">Địa chỉ</span>
+    <span class="preview-value">12 Trần Hưng Đạo</span>
+  </div>
+
+  <div class="preview-row">
+    <span class="preview-label">Ngày giao</span>
+    <span class="preview-value">07/07/2026</span>
+  </div>
+
+  <div class="preview-row">
+    <span class="preview-label">Giờ giao</span>
+    <span class="preview-value">14:30</span>
+  </div>
+</section>
+
+    <!-- ===================================================== -->
+    <!-- NỘI DUNG VIẾT BÁNH -->
+    <!-- ===================================================== -->
+    <section class="preview-section preview-section-highlight">
+      <div class="preview-section-title">✍ Nội dung viết bánh</div>
+      <div class="preview-divider"></div>
+      <p class="preview-highlight-text">Chúc mừng sinh nhật Bo</p>
+    </section>
+
+    <!-- ===================================================== -->
+    <!-- GHI CHÚ -->
+    <!-- ===================================================== -->
+    <section class="preview-section">
+      <div class="preview-section-title">📝 Ghi chú</div>
+      <div class="preview-divider"></div>
+      <p class="preview-text">Giao trước 5h chiều, gọi trước khi giao.</p>
+    </section>
+
+    <!-- ===================================================== -->
+    <!-- THANH TOÁN -->
+    <!-- ===================================================== -->
+    <section class="preview-section">
+      <div class="preview-section-title">💰 Thanh toán</div>
+      <div class="preview-divider"></div>
+      <div class="preview-row">
+        <span class="preview-label">Tiền bánh</span>
+        <span class="preview-value">450.000đ</span>
+      </div>
+      <div class="preview-row">
+        <span class="preview-label">Phí ship</span>
+        <span class="preview-value">25.000đ</span>
+      </div>
+      <div class="preview-row">
+        <span class="preview-label">Giảm giá</span>
+        <span class="preview-value">-20.000đ</span>
+      </div>
+      <div class="preview-summary-divider"></div>
+      <div class="preview-total-box">
+        <span class="preview-total-label">Tổng thanh toán</span>
+        <span class="preview-total-value">455.000đ</span>
+      </div>
+    </section>
+
+    <!-- ===================================================== -->
+    <!-- FOOTER MESSAGE CARD -->
+    <!-- ===================================================== -->
+    <section class="preview-note-card">
+      <span class="preview-note-icon">❤️</span>
+      <p class="preview-note-text">Xin vui lòng kiểm tra lại thông tin đơn hàng. Nếu mọi thông tin đã chính xác, CSKH sẽ gửi kèm hướng dẫn chuyển khoản.</p>
+    </section>
+
+  </main>
+
+  <!-- ===================================================== -->
+  <!-- BOTTOM ACTION -->
+  <!-- ===================================================== -->
+  <footer class="preview-footer">
+    <button type="button" class="btn-preview-back" onclick="history.back()">Quay lại chỉnh sửa</button>
+  </footer>
+
+</div>
+
+</body>
+</html>

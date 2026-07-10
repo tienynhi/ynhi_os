@@ -1,0 +1,343 @@
+/* ============================================================
+   YNHI OS — PREVIEW ORDER (Customer Confirmation Sheet)
+   Mobile-first, chuẩn iPhone 390px, cùng Design System hệ thống
+   ============================================================ */
+
+:root {
+  --y-green: #17a35a;
+  --y-green-dark: #128a4a;
+  --y-green-soft: #e6f7ee;
+  --y-green-softer: #f3fbf6;
+  --y-bg: #f4f6f5;
+  --y-card-bg: #ffffff;
+  --y-text-main: #1a231f;
+  --y-text-sub: #6b7570;
+  --y-text-faint: #99a19c;
+  --y-border: #ecefee;
+  --y-radius-lg: 20px;
+  --y-radius-md: 14px;
+  --y-shadow-soft: 0 2px 8px rgba(20, 40, 30, 0.05);
+  --y-header-h: 64px;
+  --y-footer-h: 84px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--y-bg);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: var(--y-text-main);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.app-shell {
+  max-width: 430px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background: var(--y-bg);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* =======================================================
+   HEADER
+   ======================================================= */
+.preview-header {
+  height: var(--y-header-h);
+  min-height: var(--y-header-h);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 16px;
+  background: var(--y-card-bg);
+  border-bottom: 1px solid var(--y-border);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.btn-back {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  border-radius: 50%;
+  border: none;
+  background: var(--y-green-soft);
+  color: var(--y-green-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preview-logo-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.preview-logo-mark {
+  width: 34px;
+  height: 34px;
+  min-width: 34px;
+  border-radius: 10px;
+  background: var(--y-green);
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 8px rgba(23, 163, 90, 0.28);
+}
+
+.preview-title-group {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+  min-width: 0;
+}
+
+.preview-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--y-text-main);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.preview-order-code {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--y-green-dark);
+}
+
+.header-spacer {
+  margin-left: auto;
+}
+
+/* =======================================================
+   MAIN / SECTIONS
+   ======================================================= */
+.preview-main {
+  flex: 1;
+  padding: 14px 14px calc(var(--y-footer-h) + 14px) 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.preview-section {
+  background: var(--y-card-bg);
+  border-radius: var(--y-radius-lg);
+  box-shadow: var(--y-shadow-soft);
+  padding: 16px;
+}
+
+.preview-section-title {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--y-text-main);
+}
+
+.preview-divider {
+  height: 1px;
+  background: var(--y-border);
+  margin: 10px 0 12px 0;
+}
+
+/* =======================================================
+   BÁNH - danh sách sản phẩm
+   ======================================================= */
+.preview-product-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.preview-product-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--y-green-softer);
+  border-radius: var(--y-radius-md);
+  padding: 10px 14px;
+}
+
+.preview-product-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--y-text-main);
+}
+
+.preview-product-qty {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--y-green-dark);
+  flex-shrink: 0;
+}
+
+/* =======================================================
+   NGƯỜI NHẬN / NGÀY GIAO - dạng nhãn - giá trị
+   ======================================================= */
+.preview-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 6px 0;
+}
+
+.preview-label {
+  font-size: 13px;
+  color: var(--y-text-sub);
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+.preview-value {
+  font-size: 13.5px;
+  color: var(--y-text-main);
+  font-weight: 700;
+  text-align: right;
+}
+
+/* =======================================================
+   ĐỊA CHỈ / GHI CHÚ - văn bản thường
+   ======================================================= */
+.preview-text {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--y-text-main);
+}
+
+/* =======================================================
+   NỘI DUNG VIẾT BÁNH - nổi bật
+   ======================================================= */
+.preview-section-highlight {
+  border: 1.5px solid var(--y-green);
+}
+
+.preview-highlight-text {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--y-green-dark);
+}
+
+/* =======================================================
+   THANH TOÁN
+   ======================================================= */
+.preview-summary-divider {
+  height: 1px;
+  background: var(--y-border);
+  margin: 10px 0;
+}
+
+.preview-total-box {
+  background: var(--y-green);
+  border-radius: var(--y-radius-md);
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 6px 18px rgba(23, 163, 90, 0.3);
+}
+
+.preview-total-label {
+  font-size: 13.5px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.preview-total-value {
+  font-size: 20px;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+/* =======================================================
+   FOOTER MESSAGE CARD
+   ======================================================= */
+.preview-note-card {
+  background: var(--y-card-bg);
+  border-radius: var(--y-radius-lg);
+  box-shadow: var(--y-shadow-soft);
+  padding: 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.preview-note-icon {
+  font-size: 18px;
+  line-height: 1.4;
+  flex-shrink: 0;
+}
+
+.preview-note-text {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--y-text-sub);
+}
+
+/* =======================================================
+   BOTTOM ACTION - Sticky Footer
+   ======================================================= */
+.preview-footer {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 430px;
+  height: var(--y-footer-h);
+  background: var(--y-card-bg);
+  border-top: 1px solid var(--y-border);
+  display: flex;
+  align-items: center;
+  padding: 12px 14px calc(env(safe-area-inset-bottom, 0px) + 12px) 14px;
+  z-index: 30;
+  box-shadow: 0 -6px 20px rgba(20, 40, 30, 0.06);
+}
+
+.btn-preview-back {
+  width: 100%;
+  height: 52px;
+  border-radius: var(--y-radius-md);
+  border: 1.5px solid var(--y-green);
+  background: var(--y-card-bg);
+  color: var(--y-green-dark);
+  font-size: 15.5px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ============================================================
+   RESPONSIVE — đảm bảo chuẩn 390px iPhone, tối ưu 9:16
+   ============================================================ */
+@media (max-width: 380px) {
+  .preview-main {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .preview-section {
+    padding: 14px;
+  }
+}
+.preview-section + .preview-note-card {
+  margin-top: 10px;
+}
