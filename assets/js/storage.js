@@ -19,6 +19,9 @@ var STORAGE_KEYS = {
  */
 function safeReadJSON(key, fallback) {
   try {
+    if (typeof window === "undefined" || !window.localStorage) {
+      return fallback;
+    }
     var raw = window.localStorage.getItem(key);
     if (raw === null || raw === undefined) {
       return fallback;
@@ -37,13 +40,15 @@ function safeReadJSON(key, fallback) {
  */
 function safeWriteJSON(key, value) {
   try {
+    if (typeof window === "undefined" || !window.localStorage) {
+      return false;
+    }
     window.localStorage.setItem(key, JSON.stringify(value));
     return true;
   } catch (error) {
     return false;
   }
 }
-
 /**
  * Đọc toàn bộ danh sách Order đã lưu.
  * @returns {object[]}

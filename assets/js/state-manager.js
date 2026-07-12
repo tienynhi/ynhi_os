@@ -106,10 +106,15 @@ function updateDraft(path, value) {
   }
 
   target[keys[keys.length - 1]] = value;
-  AppState.draftOrder.summary = recalculateSummary(AppState.draftOrder);
+
+  try {
+    AppState.draftOrder.summary = recalculateSummary(AppState.draftOrder);
+  } catch (error) {
+    // Không để lỗi tính summary chặn việc lưu Draft xuống storage.
+  }
+
   saveDraft(AppState.draftOrder);
 }
-
 /**
  * Xóa Draft Order hiện tại, trả AppState.draftOrder về rỗng.
  */

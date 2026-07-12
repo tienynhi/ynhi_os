@@ -56,17 +56,35 @@
 
       <div class="form-field">
         <label class="form-label">Tên khách hàng</label>
-        <input type="text" class="form-control input-lg" placeholder="Nhập tên khách hàng" value="Chị Hồng Nhung">
+        <input
+  type="text"
+  id="input-customer-name"
+  class="form-control input-lg"
+  placeholder="Nhập tên khách hàng"
+  value=""
+  oninput="updateDraft('customer.name', this.value)">
       </div>
 
       <div class="form-field">
         <label class="form-label">Số điện thoại</label>
-        <input type="tel" class="form-control input-lg" placeholder="Nhập số điện thoại" value="0909 123 456">
+        <input
+  type="tel"
+  id="input-customer-phone"
+  class="form-control input-lg"
+  placeholder="Nhập số điện thoại"
+  value=""
+  oninput="updateDraft('customer.phone', this.value)">
       </div>
 
       <div class="form-field">
         <label class="form-label">Địa chỉ</label>
-        <input type="text" class="form-control input-lg" placeholder="Số nhà, đường..." value="12 Trần Hưng Đạo">
+        <input
+  type="text"
+  id="input-customer-address"
+  class="form-control input-lg"
+  placeholder="Số nhà, đường..."
+  value=""
+  oninput="updateDraft('customer.address', this.value)">
       </div>
 
       <div class="form-row-2">
@@ -428,7 +446,29 @@
 
 <script>
 initState();
+
+var __draft = getDraft();
+
+if (__draft && __draft.customer) {
+
+  if (__draft.customer.name) {
+    document.getElementById("input-customer-name").value =
+      __draft.customer.name;
+  }
+
+  if (__draft.customer.phone) {
+    document.getElementById("input-customer-phone").value =
+      __draft.customer.phone;
+  }
+
+  if (__draft.customer.address) {
+    document.getElementById("input-customer-address").value =
+      __draft.customer.address;
+  }
+
+}
 </script>
+
 </body>
 </html>
 /* --- BLOCK 04: placeholder "Chưa chọn" nhạt màu hơn text bình thường --- */
