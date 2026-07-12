@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Tạo đơn - Ynhi OS</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="../assets/css/create-order-menu.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="create-menu-shell">
+
+  <!-- BLOCK 01 HEADER -->
+  <header class="create-menu-header">
+    <button
+  type="button"
+  class="create-menu-back"
+  aria-label="Quay lại"
+  onclick="history.back()">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M15 18l-6-6 6-6"/>
+      </svg>
+    </button>
+    <h1 class="create-menu-title">Tạo đơn</h1>
+    <div class="create-menu-spacer"></div>
+  </header>
+
+  <!-- BLOCK 02 CREATE NEW -->
+  <main class="create-menu-main">
+
+    <a href="new-order.html" class="create-menu-card">
+      <span class="create-menu-icon">➕</span>
+      <span class="create-menu-text-group">
+        <span class="create-menu-card-title">Tạo đơn mới</span>
+        <span class="create-menu-card-subtitle">Tạo một đơn hàng mới</span>
+      </span>
+    </a>
+
+    <!-- BLOCK 03 DRAFT LIST -->
+    <a href="draft-list.html" class="create-menu-card">
+      <span class="create-menu-icon">📝</span>
+      <span class="create-menu-text-group">
+        <span class="create-menu-card-title">Danh sách đơn nháp</span>
+        <span class="create-menu-card-subtitle">3 đơn nháp</span>
+      </span>
+    </a>
+
+  </main>
+
+</div>
+
+</body>
+</html>
