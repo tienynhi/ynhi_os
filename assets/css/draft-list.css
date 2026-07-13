@@ -1,0 +1,214 @@
+/* ============================================================
+   YNHI OS — DRAFT LIST (Danh sách đơn nháp)
+   Toàn bộ class dùng prefix .draft-list- để không đụng CSS hệ thống.
+   Không style thẻ trần (button, a, ...).
+   ============================================================ */
+
+:root {
+  --y-green: #17a35a;
+  --y-green-dark: #128a4a;
+  --y-green-soft: #e6f7ee;
+  --y-green-softer: #f3fbf6;
+  --y-bg: #f4f6f5;
+  --y-card-bg: #ffffff;
+  --y-text-main: #1a231f;
+  --y-text-sub: #6b7570;
+  --y-text-faint: #99a19c;
+  --y-border: #ecefee;
+  --y-radius-lg: 20px;
+  --y-radius-md: 14px;
+  --y-shadow-soft: 0 2px 8px rgba(20, 40, 30, 0.05);
+  --y-header-h: 64px;
+}
+
+.draft-list-shell {
+  max-width: 430px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background: var(--y-bg);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: var(--y-text-main);
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.draft-list-shell * {
+  box-sizing: border-box;
+}
+
+/* BLOCK 01 HEADER */
+.draft-list-header {
+  height: var(--y-header-h);
+  min-height: var(--y-header-h);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 16px;
+  background: var(--y-card-bg);
+  border-bottom: 1px solid var(--y-border);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.draft-list-back {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  border-radius: 50%;
+  border: none;
+  background: var(--y-green-soft);
+  color: var(--y-green-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.draft-list-title {
+  font-size: 18px;
+  font-weight: 800;
+  margin: 0;
+  color: var(--y-text-main);
+}
+
+.draft-list-spacer {
+  margin-left: auto;
+}
+
+/* BLOCK 02 SEARCH */
+.draft-list-search-wrap {
+  margin: 14px 14px 0 14px;
+  background: var(--y-card-bg);
+  border: 1.5px solid var(--y-border);
+  border-radius: var(--y-radius-md);
+  height: 46px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 14px;
+}
+
+.draft-list-search-icon {
+  color: var(--y-text-faint);
+  flex-shrink: 0;
+}
+
+.draft-list-search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14.5px;
+  font-weight: 500;
+  color: var(--y-text-main);
+  font-family: inherit;
+}
+
+.draft-list-search-input::placeholder {
+  color: var(--y-text-faint);
+  font-weight: 500;
+}
+
+/* BLOCK 03 FILTER */
+.draft-list-filter-row {
+  display: flex;
+  gap: 8px;
+  padding: 12px 14px;
+}
+
+.draft-list-chip {
+  height: 36px;
+  padding: 0 16px;
+  border-radius: 100px;
+  border: 1.5px solid var(--y-green);
+  background: var(--y-card-bg);
+  color: var(--y-green-dark);
+  font-size: 13.5px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.draft-list-chip-active {
+  background: var(--y-green);
+  border-color: var(--y-green);
+  color: #ffffff;
+}
+
+/* BLOCK 04 LIST DRAFT */
+.draft-list-main {
+  flex: 1;
+  padding: 0 14px 14px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.draft-list-card {
+  min-height: 110px;
+  background: var(--y-card-bg);
+  border-radius: var(--y-radius-lg);
+  box-shadow: var(--y-shadow-soft);
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.draft-list-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.draft-list-customer-name {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--y-text-main);
+}
+
+.draft-list-badge {
+  flex-shrink: 0;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--y-text-sub);
+  background: var(--y-green-softer);
+  padding: 4px 10px;
+  border-radius: 100px;
+}
+
+.draft-list-customer-phone {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--y-text-sub);
+}
+
+.draft-list-product-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--y-text-main);
+  margin-top: 2px;
+}
+
+.draft-list-card-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 6px;
+}
+
+.draft-list-total {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--y-green-dark);
+}
+
+.draft-list-date {
+  font-size: 11.5px;
+  font-weight: 500;
+  color: var(--y-text-faint);
+}

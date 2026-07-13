@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Đơn nháp - Ynhi OS</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="../assets/css/draft-list.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="draft-list-shell">
+
+  <!-- BLOCK 01 HEADER -->
+  <header class="draft-list-header">
+    <button type="button"
+    class="draft-list-back"
+    aria-label="Quay lại"
+    onclick="history.back()">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M15 18l-6-6 6-6"/>
+      </svg>
+    </button>
+    <h1 class="draft-list-title">Đơn nháp</h1>
+    <div class="draft-list-spacer"></div>
+  </header>
+
+  <!-- BLOCK 02 SEARCH -->
+  <div class="draft-list-search-wrap">
+    <svg class="draft-list-search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="11" cy="11" r="7"/>
+      <path d="M21 21l-4.35-4.35"/>
+    </svg>
+    <input type="text" class="draft-list-search-input" placeholder="Tìm tên hoặc SĐT...">
+  </div>
+
+  <!-- BLOCK 03 FILTER -->
+  <div class="draft-list-filter-row">
+    <button type="button" class="draft-list-chip draft-list-chip-active">Tất cả</button>
+    <button type="button" class="draft-list-chip">Hôm nay</button>
+  </div>
+
+  <!-- BLOCK 04 LIST DRAFT -->
+  <main class="draft-list-main">
+
+    <!-- BLOCK 04 DRAFT CARD -->
+    <a href="new-order.html" class="draft-list-card">
+      <div class="draft-list-card-top">
+        <span class="draft-list-customer-name">Chị Hồng Nhung</span>
+        <span class="draft-list-badge">Đơn nháp</span>
+      </div>
+      <div class="draft-list-customer-phone">0909 123 456</div>
+      <div class="draft-list-product-name">Bánh kem dâu tây size 20cm</div>
+      <div class="draft-list-card-bottom">
+        <span class="draft-list-total">185.000đ</span>
+        <span class="draft-list-date">Tạo nháp 07/07/2026</span>
+      </div>
+    </a>
+
+    <!-- BLOCK 04 DRAFT CARD -->
+    <a href="new-order.html" class="draft-list-card">
+      <div class="draft-list-card-top">
+        <span class="draft-list-customer-name">Anh Minh Quân</span>
+        <span class="draft-list-badge">Đơn nháp</span>
+      </div>
+      <div class="draft-list-customer-phone">0912 456 789</div>
+      <div class="draft-list-product-name">Bánh su kem hộp 6 cái</div>
+      <div class="draft-list-card-bottom">
+        <span class="draft-list-total">130.000đ</span>
+        <span class="draft-list-date">Tạo nháp 07/07/2026</span>
+      </div>
+    </a>
+
+    <!-- BLOCK 04 DRAFT CARD -->
+    <a href="new-order.html" class="draft-list-card">
+      <div class="draft-list-card-top">
+        <span class="draft-list-customer-name">Chị Bảo Trân</span>
+        <span class="draft-list-badge">Đơn nháp</span>
+      </div>
+      <div class="draft-list-customer-phone">0938 222 111</div>
+      <div class="draft-list-product-name">Bánh mousse chanh dây mini</div>
+      <div class="draft-list-card-bottom">
+        <span class="draft-list-total">135.000đ</span>
+        <span class="draft-list-date">Tạo nháp 06/07/2026</span>
+      </div>
+    </a>
+
+  </main>
+
+</div>
+
+</body>
+</html>
