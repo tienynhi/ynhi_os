@@ -212,3 +212,10 @@
   font-weight: 500;
   color: var(--y-text-faint);
 }
+.draft-list-empty {
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--y-text-sub);
+}

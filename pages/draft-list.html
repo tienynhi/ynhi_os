@@ -41,53 +41,64 @@
   </div>
 
   <!-- BLOCK 04 LIST DRAFT -->
-  <main class="draft-list-main">
+  <main class="draft-list-main" id="draft-list-main">
 
-    <!-- BLOCK 04 DRAFT CARD -->
-    <a href="new-order.html" class="draft-list-card">
-      <div class="draft-list-card-top">
-        <span class="draft-list-customer-name">Chị Hồng Nhung</span>
-        <span class="draft-list-badge">Đơn nháp</span>
-      </div>
-      <div class="draft-list-customer-phone">0909 123 456</div>
-      <div class="draft-list-product-name">Bánh kem dâu tây size 20cm</div>
-      <div class="draft-list-card-bottom">
-        <span class="draft-list-total">185.000đ</span>
-        <span class="draft-list-date">Tạo nháp 07/07/2026</span>
-      </div>
-    </a>
-
-    <!-- BLOCK 04 DRAFT CARD -->
-    <a href="new-order.html" class="draft-list-card">
-      <div class="draft-list-card-top">
-        <span class="draft-list-customer-name">Anh Minh Quân</span>
-        <span class="draft-list-badge">Đơn nháp</span>
-      </div>
-      <div class="draft-list-customer-phone">0912 456 789</div>
-      <div class="draft-list-product-name">Bánh su kem hộp 6 cái</div>
-      <div class="draft-list-card-bottom">
-        <span class="draft-list-total">130.000đ</span>
-        <span class="draft-list-date">Tạo nháp 07/07/2026</span>
-      </div>
-    </a>
-
-    <!-- BLOCK 04 DRAFT CARD -->
-    <a href="new-order.html" class="draft-list-card">
-      <div class="draft-list-card-top">
-        <span class="draft-list-customer-name">Chị Bảo Trân</span>
-        <span class="draft-list-badge">Đơn nháp</span>
-      </div>
-      <div class="draft-list-customer-phone">0938 222 111</div>
-      <div class="draft-list-product-name">Bánh mousse chanh dây mini</div>
-      <div class="draft-list-card-bottom">
-        <span class="draft-list-total">135.000đ</span>
-        <span class="draft-list-date">Tạo nháp 06/07/2026</span>
-      </div>
-    </a>
 
   </main>
 
 </div>
+<script src="../assets/js/order-model.js"></script>
+<script src="../assets/js/storage.js"></script>
+<script src="../assets/js/state-manager.js"></script>
 
+<script>
+initState();
+
+function isDraftMeaningful(draft) {
+  if (!draft) {
+    return false;
+  }
+  var hasCustomerName = draft.customer && draft.customer.name;
+  var hasProducts = draft.products && draft.products.length > 0;
+  return Boolean(hasCustomerName || hasProducts);
+}
+
+function renderDraftList() {
+  var draft = getDraft();
+  var container = document.getElementById('draft-list-main');
+  container.innerHTML = '';
+
+  if (!isDraftMeaningful(draft)) {
+    var empty = document.createElement('div');
+    empty.className = 'draft-list-empty';
+    empty.id = 'draft-list-empty';
+    empty.textContent = 'Chưa có đơn nháp nào.';
+    container.appendChild(empty);
+    return;
+  }
+
+  var mainProduct = (draft.products && draft.products[0]) || null;
+  var total = (draft.summary && draft.summary.total) || 0;
+
+  var card = document.createElement('a');
+  card.href = 'new-order.html';
+  card.className = 'draft-list-card';
+  card.innerHTML =
+    '<div class="draft-list-card-top">' +
+      '<span class="draft-list-customer-name">' + (draft.customer.name || 'Chưa có tên') + '</span>' +
+      '<span class="draft-list-badge">Đơn nháp</span>' +
+    '</div>' +
+    '<div class="draft-list-customer-phone">' + (draft.customer.phone || '') + '</div>' +
+    '<div class="draft-list-product-name">' + (mainProduct ? mainProduct.name : 'Chưa có sản phẩm') + '</div>' +
+    '<div class="draft-list-card-bottom">' +
+      '<span class="draft-list-total">' + total.toLocaleString('vi-VN') + 'đ</span>' +
+      '<span class="draft-list-date">Đang chỉnh sửa</span>' +
+    '</div>';
+
+  container.appendChild(card);
+}
+
+renderDraftList();
+</script>
 </body>
 </html>
