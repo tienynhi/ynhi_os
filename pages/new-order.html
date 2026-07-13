@@ -494,9 +494,9 @@ if (__draft && __draft.customer) {
 
     <!-- BLOCK 05 Button Group -->
     <div class="draft-popup-button-group">
-      <button type="button" class="draft-popup-button-primary" onclick="saveDraft()">Lưu đơn nháp</button>
-      <button type="button" class="draft-popup-button-secondary" onclick="continueEditing()">Tiếp tục chỉnh sửa</button>
-      <button type="button" class="draft-popup-button-danger" onclick="discardDraft()">Hủy đơn nháp</button>
+      <button type="button" class="draft-popup-button-primary" onclick="handleSaveDraftClick()">Lưu đơn nháp</button>
+      <button type="button" class="draft-popup-button-secondary" onclick="handleContinueEditingClick()">Tiếp tục chỉnh sửa</button>
+      <button type="button" class="draft-popup-button-danger" onclick="handleDiscardDraftClick()" >Hủy đơn nháp</button>
     </div>
 
   </div>
@@ -504,19 +504,20 @@ if (__draft && __draft.customer) {
 </div>
 
 <script>
-function saveDraft() {
-  // TODO: gọi State Manager để lưu Draft hiện tại
-  // TODO: sau khi lưu xong, điều hướng về Create Order Menu
+function handleSaveDraftClick() {
+    saveDraft(getDraft());
+    closeDraftPopup();
+    location.href='create-order-menu.html';
 }
 
-function continueEditing() {
-  // TODO: không thay đổi Draft
-  closeDraftPopup();
+function handleContinueEditingClick() {
+    closeDraftPopup();
 }
 
-function discardDraft() {
-  // TODO: gọi State Manager để xóa Draft hiện tại
-  // TODO: sau khi xóa xong, điều hướng về Create Order Menu
+function handleDiscardDraftClick() {
+    clearDraftState();
+    closeDraftPopup();
+    location.href='create-order-menu.html';
 }
 
 function openDraftPopup() {
@@ -529,7 +530,7 @@ function closeDraftPopup() {
 
 function handleOverlayClick(event) {
   if (event.target.id === 'draft-popup-overlay') {
-    continueEditing();
+    handleContinueEditingClick();
   }
 }
 </script>
