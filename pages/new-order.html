@@ -7,6 +7,7 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/css/new-order.css">
+<link href="../../assets/css/draft-save-popup.css" rel="stylesheet">
 </head>
 <body>
 
@@ -17,7 +18,11 @@
   <!-- ===================================================== -->
   <!-- ===================== 1. HEADER ===================== -->
   <header class="order-header">
-    <button type="button" class="btn-back" aria-label="Quay lại" onclick="location.href='home.html'">
+    <button
+type="button"
+class="btn-back"
+aria-label="Quay lại"
+onclick="openDraftPopup()">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
         <path d="M15 18l-6-6 6-6"/>
       </svg>
@@ -468,7 +473,66 @@ if (__draft && __draft.customer) {
 
 }
 </script>
+<!-- BLOCK 01 Overlay -->
+<div class="draft-popup-overlay" id="draft-popup-overlay" onclick="handleOverlayClick(event)">
 
+  <!-- BLOCK 02 Sheet -->
+  <div class="draft-popup-sheet" id="draft-popup-sheet">
+
+    <div class="draft-popup-sheet-handle"></div>
+
+    <!-- BLOCK 03 Icon -->
+    <div class="draft-popup-icon-wrap">
+      <span class="draft-popup-icon">📝</span>
+    </div>
+
+    <!-- BLOCK 04 Text -->
+    <div class="draft-popup-text-group">
+      <h2 class="draft-popup-title">Lưu đơn nháp?</h2>
+      <p class="draft-popup-description">Bạn đang tạo đơn cho khách. Bạn muốn lưu lại để tiếp tục sau hay tiếp tục chỉnh sửa?</p>
+    </div>
+
+    <!-- BLOCK 05 Button Group -->
+    <div class="draft-popup-button-group">
+      <button type="button" class="draft-popup-button-primary" onclick="saveDraft()">Lưu đơn nháp</button>
+      <button type="button" class="draft-popup-button-secondary" onclick="continueEditing()">Tiếp tục chỉnh sửa</button>
+      <button type="button" class="draft-popup-button-danger" onclick="discardDraft()">Hủy đơn nháp</button>
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+function saveDraft() {
+  // TODO: gọi State Manager để lưu Draft hiện tại
+  // TODO: sau khi lưu xong, điều hướng về Create Order Menu
+}
+
+function continueEditing() {
+  // TODO: không thay đổi Draft
+  closeDraftPopup();
+}
+
+function discardDraft() {
+  // TODO: gọi State Manager để xóa Draft hiện tại
+  // TODO: sau khi xóa xong, điều hướng về Create Order Menu
+}
+
+function openDraftPopup() {
+  document.getElementById('draft-popup-overlay').classList.add('draft-popup-overlay-show');
+}
+
+function closeDraftPopup() {
+  document.getElementById('draft-popup-overlay').classList.remove('draft-popup-overlay-show');
+}
+
+function handleOverlayClick(event) {
+  if (event.target.id === 'draft-popup-overlay') {
+    continueEditing();
+  }
+}
+</script>
 </body>
 </html>
 /* --- BLOCK 04: placeholder "Chưa chọn" nhạt màu hơn text bình thường --- */
