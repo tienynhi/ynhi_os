@@ -29,13 +29,13 @@
   <!-- BLOCK 02 CREATE NEW -->
   <main class="create-menu-main">
 
-    <a href="new-order.html" class="create-menu-card">
-      <span class="create-menu-icon">➕</span>
-      <span class="create-menu-text-group">
-        <span class="create-menu-card-title">Tạo đơn mới</span>
-        <span class="create-menu-card-subtitle">Tạo một đơn hàng mới</span>
-      </span>
-    </a>
+    <a href="new-order.html" class="create-menu-card" onclick="handleCreateNewOrderClick(); return false;">
+  <span class="create-menu-icon">➕</span>
+  <span class="create-menu-text-group">
+    <span class="create-menu-card-title">Tạo đơn mới</span>
+    <span class="create-menu-card-subtitle">Tạo một đơn hàng mới</span>
+  </span>
+</a>
 
     <!-- BLOCK 03 DRAFT LIST -->
     <a href="draft-list.html" class="create-menu-card">
@@ -49,6 +49,18 @@
   </main>
 
 </div>
+<script src="../assets/js/order-model.js"></script>
+<script src="../assets/js/storage.js"></script>
+<script src="../assets/js/state-manager.js"></script>
 
+<script>
+initState();
+
+function handleCreateNewOrderClick() {
+  var newDraft = createNewDraft();
+  setActiveDraft(newDraft.id);
+  location.href = 'new-order.html';
+}
+</script>
 </body>
 </html>

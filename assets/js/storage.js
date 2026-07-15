@@ -3,11 +3,17 @@
    Wrapper thuần cho localStorage.
    File này KHÔNG được chứa business logic (tính tổng, đổi trạng
    thái, sinh mã đơn...). Chỉ đọc/ghi dữ liệu thô.
+   ------------------------------------------------------------
+   NÂNG CẤP: Draft giờ là DANH SÁCH (drafts[]) thay vì 1 object
+   duy nhất, để hỗ trợ CSKH tạo nhiều Draft cùng lúc (Draft A,
+   Draft B, Draft C...). Mỗi Draft vẫn dùng đúng Order Model hiện
+   có, chỉ khác là được lưu trong 1 mảng thay vì 1 key đơn.
    ============================================================ */
 
 var STORAGE_KEYS = {
   ORDERS: "ynhi_os_orders",
-  DRAFT_ORDER: "ynhi_os_draft_order",
+  DRAFTS: "ynhi_os_drafts",
+  ACTIVE_DRAFT_ID: "ynhi_os_active_draft_id",
   SELECTED_ORDER_ID: "ynhi_os_selected_order_id"
 };
 
@@ -49,6 +55,7 @@ function safeWriteJSON(key, value) {
     return false;
   }
 }
+
 /**
  * Đọc toàn bộ danh sách Order đã lưu.
  * @returns {object[]}
@@ -67,33 +74,37 @@ function saveOrders(orders) {
 }
 
 /**
- * Đọc Draft Order hiện tại (đơn đang được CSKH nhập dở trên New Order).
- * @returns {object|null}
+ * Đọc toàn bộ danh sách Draft đang lưu (nhiều Draft cùng lúc).
+ * @returns {object[]}
  */
-function loadDraft() {
-  return safeReadJSON(STORAGE_KEYS.DRAFT_ORDER, null);
+function loadDrafts() {
+  return safeReadJSON(STORAGE_KEYS.DRAFTS, []);
 }
 
 /**
- * Lưu Draft Order hiện tại.
- * @param {object} draft
+ * Lưu toàn bộ danh sách Draft.
+ * @param {object[]} drafts
  * @returns {boolean}
  */
-function saveDraft(draft) {
-  return safeWriteJSON(STORAGE_KEYS.DRAFT_ORDER, draft);
+function saveDrafts(drafts) {
+  return safeWriteJSON(STORAGE_KEYS.DRAFTS, drafts || []);
 }
 
 /**
- * Xóa Draft Order hiện tại (sau khi đã tạo đơn thành công hoặc hủy tạo đơn).
+ * Đọc id của Draft đang được chỉnh sửa (Draft đang mở trên New Order).
+ * @returns {string|null}
+ */
+function loadActiveDraftId() {
+  return safeReadJSON(STORAGE_KEYS.ACTIVE_DRAFT_ID, null);
+}
+
+/**
+ * Lưu id của Draft đang được chỉnh sửa.
+ * @param {string|null} draftId
  * @returns {boolean}
  */
-function clearDraft() {
-  try {
-    window.localStorage.removeItem(STORAGE_KEYS.DRAFT_ORDER);
-    return true;
-  } catch (error) {
-    return false;
-  }
+function saveActiveDraftId(draftId) {
+  return safeWriteJSON(STORAGE_KEYS.ACTIVE_DRAFT_ID, draftId);
 }
 
 /**
