@@ -64,11 +64,11 @@ function isDraftMeaningful(draft) {
 }
 
 function renderDraftList() {
-  var draft = getDraft();
+  var drafts = getAllDrafts();
   var container = document.getElementById('draft-list-main');
   container.innerHTML = '';
 
-  if (!isDraftMeaningful(draft)) {
+  if (drafts.length === 0) {
     var empty = document.createElement('div');
     empty.className = 'draft-list-empty';
     empty.id = 'draft-list-empty';
@@ -77,27 +77,36 @@ function renderDraftList() {
     return;
   }
 
-  var mainProduct = (draft.products && draft.products[0]) || null;
-  var total = (draft.summary && draft.summary.total) || 0;
+  for (var i = 0; i < drafts.length; i++) {
+    var draft = drafts[i];
+    var mainProduct = (draft.products && draft.products[0]) || null;
+    var total = (draft.summary && draft.summary.total) || 0;
 
-  var card = document.createElement('a');
-  card.href = 'new-order.html';
-  card.className = 'draft-list-card';
-  card.innerHTML =
-    '<div class="draft-list-card-top">' +
-      '<span class="draft-list-customer-name">' + (draft.customer.name || 'Chưa có tên') + '</span>' +
-      '<span class="draft-list-badge">Đơn nháp</span>' +
-    '</div>' +
-    '<div class="draft-list-customer-phone">' + (draft.customer.phone || '') + '</div>' +
-    '<div class="draft-list-product-name">' + (mainProduct ? mainProduct.name : 'Chưa có sản phẩm') + '</div>' +
-    '<div class="draft-list-card-bottom">' +
-      '<span class="draft-list-total">' + total.toLocaleString('vi-VN') + 'đ</span>' +
-      '<span class="draft-list-date">Đang chỉnh sửa</span>' +
-    '</div>';
+    var card = document.createElement('a');
+    card.href = 'new-order.html';
+    card.className = 'draft-list-card';
+    card.onclick = function (clickedDraftId) {
+    return function (event) {
+        event.preventDefault();
+        setActiveDraft(clickedDraftId);
+        location.href = 'new-order.html';
+    };
+}(draft.id);
+    card.innerHTML =
+      '<div class="draft-list-card-top">' +
+        '<span class="draft-list-customer-name">' + (draft.customer.name || 'Chưa có tên') + '</span>' +
+        '<span class="draft-list-badge">Đơn nháp</span>' +
+      '</div>' +
+      '<div class="draft-list-customer-phone">' + (draft.customer.phone || '') + '</div>' +
+      '<div class="draft-list-product-name">' + (mainProduct ? mainProduct.name : 'Chưa có sản phẩm') + '</div>' +
+      '<div class="draft-list-card-bottom">' +
+        '<span class="draft-list-total">' + total.toLocaleString('vi-VN') + 'đ</span>' +
+        '<span class="draft-list-date">Đang chỉnh sửa</span>' +
+      '</div>';
 
-  container.appendChild(card);
+    container.appendChild(card);
+  }
 }
-
 renderDraftList();
 </script>
 </body>
