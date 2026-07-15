@@ -105,17 +105,17 @@ onclick="openDraftPopup()">
           </select>
         </div>
         <div class="form-field">
-          <label class="form-label">Nguồn khách</label>
-          <select class="form-select input-lg">
-            <option>Facebook</option>
-            <option>TikTok</option>
-            <option>Zalo</option>
-            <option>Hotline</option>
-            <option>Website</option>
-            <option>Vãng lai</option>
-            <option>Giới thiệu</option>
-          </select>
-        </div>
+  <label class="form-label">Nguồn khách</label>
+  <select id="input-customer-source" class="form-select input-lg" onchange="updateDraft('customer.source', this.value)">
+    <option>Facebook</option>
+    <option>TikTok</option>
+    <option>Zalo</option>
+    <option>Hotline</option>
+    <option>Website</option>
+    <option>Vãng lai</option>
+    <option>Giới thiệu</option>
+  </select>
+</div>
       </div>
     </section>
 <!-- ===================================================== -->
@@ -476,6 +476,10 @@ if (__draft && __draft.customer) {
 if (__draft.customer.type) {
     document.getElementById('input-customer-type').value =
         __draft.customer.type;
+}
+if (__draft.customer.source) {
+  document.getElementById('input-customer-source').value =
+      __draft.customer.source;
 }
 }
 </script>
