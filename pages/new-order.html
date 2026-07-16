@@ -201,95 +201,30 @@ onclick="openDraftPopup()">
           </div>
         </div>
       </div>
-      <div class="product-list">
+      <div class="product-list" id="product-list"></div>
 
-        <!-- Product item -->
-        <div class="product-item">
-          <div class="product-info">
-            <div class="product-name">Bánh kem dâu tây size 20cm</div>
-            <div class="product-price">185.000đ</div>
-          </div>
-          <div class="product-actions">
-            <div class="qty-control">
-              <button type="button" class="qty-btn qty-minus" aria-label="Giảm số lượng">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12h14"/></svg>
-              </button>
-              <span class="qty-value">1</span>
-              <button type="button" class="qty-btn qty-plus" aria-label="Tăng số lượng">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
-              </button>
-            </div>
-            <button type="button" class="btn-remove-item" aria-label="Xóa sản phẩm">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
-            </button>
-          </div>
-        </div>
-
-        <!-- Product item -->
-        <div class="product-item">
-          <div class="product-info">
-            <div class="product-name">Bánh su kem hộp 6 cái</div>
-            <div class="product-price">65.000đ</div>
-          </div>
-          <div class="product-actions">
-            <div class="qty-control">
-              <button type="button" class="qty-btn qty-minus" aria-label="Giảm số lượng">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12h14"/></svg>
-              </button>
-              <span class="qty-value">2</span>
-              <button type="button" class="qty-btn qty-plus" aria-label="Tăng số lượng">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
-              </button>
-            </div>
-            <button type="button" class="btn-remove-item" aria-label="Xóa sản phẩm">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
-            </button>
-          </div>
-        </div>
-
-        <!-- Product item -->
-        <div class="product-item">
-          <div class="product-info">
-            <div class="product-name">Bánh mousse chanh dây mini</div>
-            <div class="product-price">45.000đ</div>
-          </div>
-          <div class="product-actions">
-            <div class="qty-control">
-              <button type="button" class="qty-btn qty-minus" aria-label="Giảm số lượng">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12h14"/></svg>
-              </button>
-              <span class="qty-value">3</span>
-              <button type="button" class="qty-btn qty-plus" aria-label="Tăng số lượng">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
-              </button>
-            </div>
-            <button type="button" class="btn-remove-item" aria-label="Xóa sản phẩm">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
-            </button>
-          </div>
-        </div>
-<!-- Accessory item (hiển thị chung layout với sản phẩm) -->
-        <div class="product-item">
-          <div class="product-info">
-            <div class="product-name">Nến sinh nhật</div>
-            <div class="product-price">10.000đ</div>
-          </div>
-          <div class="product-actions">
-            <div class="qty-control">
-              <button type="button" class="qty-btn qty-minus" aria-label="Giảm số lượng">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12h14"/></svg>
-              </button>
-              <span class="qty-value">1</span>
-              <button type="button" class="qty-btn qty-plus" aria-label="Tăng số lượng">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
-              </button>
-            </div>
-            <button type="button" class="btn-remove-item" aria-label="Xóa sản phẩm">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
-            </button>
-          </div>
-        </div>
+<template id="product-item-template">
+  <div class="product-item">
+    <div class="product-info">
+      <div class="product-name">Bánh kem dâu tây size 20cm</div>
+      <div class="product-price">185.000đ</div>
+    </div>
+    <div class="product-actions">
+      <div class="qty-control">
+        <button type="button" class="qty-btn qty-minus" aria-label="Giảm số lượng">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12h14"/></svg>
+        </button>
+        <span class="qty-value">1</span>
+        <button type="button" class="qty-btn qty-plus" aria-label="Tăng số lượng">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
       </div>
+      <button type="button" class="btn-remove-item" aria-label="Xóa sản phẩm">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+  </div>
+</template>
     </section>
 
     <!-- ===================================================== -->
@@ -455,6 +390,8 @@ onclick="openDraftPopup()">
 <script>
 initState();
 
+renderProductList();
+
 var __draft = getDraft();
 
 if (__draft && __draft.customer) {
@@ -481,6 +418,26 @@ if (__draft.customer.source) {
   document.getElementById('input-customer-source').value =
       __draft.customer.source;
 }
+}
+function renderProductList() {
+  var products = getProducts();
+  var container = document.getElementById('product-list');
+  var template = document.getElementById('product-item-template');
+
+  while (container.firstChild) {
+    container.removeChild(container.firstChild);
+  }
+
+  for (var i = 0; i < products.length; i++) {
+    var p = products[i];
+    var clone = template.content.cloneNode(true);
+
+    clone.querySelector('.product-name').textContent = p.name;
+    clone.querySelector('.product-price').textContent = p.price;
+    clone.querySelector('.qty-value').textContent = p.qty;
+
+    container.appendChild(clone);
+  }
 }
 </script>
 <!-- BLOCK 01 Overlay -->
