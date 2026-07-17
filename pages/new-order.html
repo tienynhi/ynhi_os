@@ -523,6 +523,27 @@ for (var i = 0; i < addButtons.length; i++) {
   };
 
 }
+document.getElementById('product-list').onclick = function (event) {
+  var minusButton = event.target.closest('.qty-minus');
+  if (!minusButton) {
+    return;
+  }
+
+  var container = document.getElementById('product-list');
+  var item = minusButton.closest('.product-item');
+  var items = Array.prototype.slice.call(container.children);
+  var index = items.indexOf(item);
+
+  var products = getProducts();
+  var product = products[index];
+
+  if (!product) {
+    return;
+  }
+
+  updateProductQty(product.id, product.qty - 1);
+  renderProductList();
+};
 </script>
 <!-- BLOCK 01 Overlay -->
 <div class="draft-popup-overlay" id="draft-popup-overlay" onclick="handleOverlayClick(event)">
