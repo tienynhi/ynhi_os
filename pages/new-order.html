@@ -506,6 +506,23 @@ function renderProductList() {
     container.appendChild(clone);
   }
 }
+var addButtons = document.querySelectorAll('.btn-dropdown-add');
+
+for (var i = 0; i < addButtons.length; i++) {
+
+  addButtons[i].onclick = function () {
+
+    var productId = this.getAttribute('data-product-id');
+
+    var product = getProductById(productId);
+
+    addProduct(product);
+
+    renderProductList();
+
+  };
+
+}
 </script>
 <!-- BLOCK 01 Overlay -->
 <div class="draft-popup-overlay" id="draft-popup-overlay" onclick="handleOverlayClick(event)">
