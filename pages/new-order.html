@@ -315,7 +315,10 @@ aria-label="Thêm khăn giấy">
       <div class="form-row-2">
         <div class="form-field">
           <label class="form-label">Đơn vị ship</label>
-          <select class="form-select input-lg select-placeholder" required>
+          <select id="input-ship-unit"
+        class="form-select input-lg select-placeholder"
+        required
+        onchange="updateDraft('delivery.shipUnit', this.value); renderShipping(); renderSummary();">
             <option value="" disabled selected hidden>Chưa chọn</option>
             <option value="noi-bo">Shipper nội bộ</option>
             <option value="grab">Grab</option>
@@ -326,7 +329,12 @@ aria-label="Thêm khăn giấy">
         </div>
         <div class="form-field">
           <label class="form-label">Phí ship</label>
-          <input type="text" class="form-control input-lg" placeholder="0đ" value="25.000đ">
+          <input id="input-ship-fee"
+       type="text"
+       class="form-control input-lg"
+       placeholder="0đ"
+       value="25.000đ"
+       oninput="updateDraft('delivery.shipFee', Number(this.value.replace(/[^0-9]/g, '')) || 0); renderShipping(); renderSummary();">
         </div>
       </div>
     </section>
@@ -395,9 +403,9 @@ aria-label="Thêm khăn giấy">
     <!-- ===================== 7. CARD TỔNG KẾT ===================== -->
     <section class="card-block card-summary">
       <div class="summary-row">
-        <span class="summary-label">Tạm tính</span>
-        <span class="summary-value">450.000đ</span>
-      </div>
+  <span class="summary-label">Tạm tính</span>
+  <span class="summary-value" id="summary-subtotal-value">450.000đ</span>
+</div>
       <div class="summary-row">
         <span class="summary-label">Phí ship</span>
         <span class="summary-value">25.000đ</span>
@@ -458,6 +466,8 @@ aria-label="Thêm khăn giấy">
 initState();
 
 renderProductList();
+renderSummary();
+renderShipping();
 
 var __draft = getDraft();
 
@@ -494,6 +504,7 @@ function renderProductList() {
   while (container.firstChild) {
     container.removeChild(container.firstChild);
   }
+  
 
   for (var i = 0; i < products.length; i++) {
     var p = products[i];
@@ -504,6 +515,42 @@ function renderProductList() {
     clone.querySelector('.qty-value').textContent = p.qty;
 
     container.appendChild(clone);
+  }
+}
+function renderSummary() {
+  var products = getProducts();
+  var lineCount = products.length;
+  var totalQty = 0;
+  var subtotal = 0;
+
+  for (var i = 0; i < products.length; i++) {
+    totalQty += Number(products[i].qty) || 0;
+    subtotal += (Number(products[i].price) || 0) * (Number(products[i].qty) || 0);
+  }
+
+  var subtotalEl = document.getElementById('summary-subtotal-value');
+  if (subtotalEl) {
+    subtotalEl.textContent = subtotal.toLocaleString('vi-VN') + 'đ';
+  }
+}
+function renderShipping() {
+  var draft = getDraft();
+
+  if (!draft || !draft.delivery) {
+    return;
+  }
+
+  var shipUnitEl = document.getElementById('input-ship-unit');
+
+  if (shipUnitEl && draft.delivery.shipUnit) {
+    shipUnitEl.value = draft.delivery.shipUnit;
+  }
+
+  var shipFeeEl = document.getElementById('input-ship-fee');
+
+  if (shipFeeEl) {
+    shipFeeEl.value =
+      (Number(draft.delivery.shipFee) || 0).toLocaleString('vi-VN') + 'đ';
   }
 }
 var addButtons = document.querySelectorAll('.btn-dropdown-add');
@@ -519,6 +566,8 @@ for (var i = 0; i < addButtons.length; i++) {
     addProduct(product);
 
     renderProductList();
+    renderSummary();
+    
 
   };
 
@@ -541,6 +590,7 @@ document.getElementById('product-list').onclick = function (event) {
 
     updateProductQty(minusProduct.id, minusProduct.qty - 1);
     renderProductList();
+    renderSummary();
     return;
   }
 
@@ -559,6 +609,7 @@ document.getElementById('product-list').onclick = function (event) {
 
     updateProductQty(plusProduct.id, plusProduct.qty + 1);
 renderProductList();
+renderSummary();
 return;
 }
 
@@ -577,6 +628,7 @@ if (removeButton) {
 
   removeProduct(removeProduct_.id);
   renderProductList();
+  renderSummary();
   return;
 }
 };
