@@ -337,6 +337,29 @@ aria-label="Thêm khăn giấy">
        oninput="updateDraft('delivery.shipFee', Number(this.value.replace(/[^0-9]/g, '')) || 0); renderShipping(); renderSummary();">
         </div>
       </div>
+      <div class="form-row-2">
+  <div class="form-field">
+    <label class="form-label">Ngày giao</label>
+    <button
+      type="button"
+      id="input-delivery-date"
+      class="form-control input-lg"
+      onclick="openShipDatePicker()">
+      Hôm nay
+    </button>
+  </div>
+
+  <div class="form-field">
+    <label class="form-label">Giờ giao</label>
+    <button
+      type="button"
+      id="input-delivery-time"
+      class="form-control input-lg"
+      onclick="openShipTimePicker()">
+      Giao ngay
+    </button>
+  </div>
+</div>
     </section>
 
     <!-- ===================================================== -->
@@ -552,6 +575,24 @@ function renderShipping() {
     shipFeeEl.value =
       (Number(draft.delivery.shipFee) || 0).toLocaleString('vi-VN') + 'đ';
   }
+  var dateEl = document.getElementById('input-delivery-date');
+
+if (dateEl && draft.delivery.date) {
+  dateEl.textContent = draft.delivery.date;
+}
+
+var timeEl = document.getElementById('input-delivery-time');
+
+if (timeEl && draft.delivery.time) {
+  timeEl.textContent = draft.delivery.time;
+}
+}
+function openShipDatePicker() {
+  // TODO: Commit 13.5B
+}
+
+function openShipTimePicker() {
+  // TODO: Commit 13.5B
 }
 var addButtons = document.querySelectorAll('.btn-dropdown-add');
 
