@@ -558,9 +558,27 @@ document.getElementById('product-list').onclick = function (event) {
     }
 
     updateProductQty(plusProduct.id, plusProduct.qty + 1);
-    renderProductList();
+renderProductList();
+return;
+}
+
+var removeButton = event.target.closest('.btn-remove-item');
+if (removeButton) {
+  var removeItem = removeButton.closest('.product-item');
+  var removeItems = Array.prototype.slice.call(container.children);
+  var removeIndex = removeItems.indexOf(removeItem);
+
+  var removeProducts = getProducts();
+  var removeProduct_ = removeProducts[removeIndex];
+
+  if (!removeProduct_) {
     return;
   }
+
+  removeProduct(removeProduct_.id);
+  renderProductList();
+  return;
+}
 };
 </script>
 <!-- BLOCK 01 Overlay -->
